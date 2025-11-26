@@ -1,1020 +1,1994 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Together With Africa (TOWAF)</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              cream: '#FDF8F0',
-              'cream-dark': '#F5EDE0',
-              'sage-50': '#F0F7F0',
-              'sage-100': '#E1F0E1',
-              'sage-200': '#C8E6C9',
-              'sage-300': '#A5D6A7',
-              'sage-400': '#81C784',
-              'sage-500': '#66BB6A',
-              'sage-600': '#4CAF50',
-              'sage-700': '#43A047',
-              'sage-800': '#388E3C',
-              'sage-900': '#2E7D32',
-              'earth-gold': '#D4A373',
-              'earth-gold-light': '#E8C8A3',
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Together With Africa (TOWAF)</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F8F4E9',
+            'cream-dark': '#EFE8D7',
+            'cream-light': '#FDF8F0',
+            'sage-50': '#F0F7F0',
+            'sage-100': '#E1F0E1',
+            'sage-200': '#C8E6C9',
+            'sage-300': '#A5D6A7',
+            'sage-400': '#81C784',
+            'sage-500': '#66BB6A',
+            'sage-600': '#4CAF50',
+            'sage-700': '#43A047',
+            'sage-800': '#388E3C',
+            'sage-900': '#2E7D32',
+            'earth-gold': '#D4A373',
+            'earth-gold-light': '#E8C8A3',
+          },
+          fontFamily: {
+            sans: ['"DM Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'float-delayed': 'float 6s ease-in-out 3s infinite',
+            'count-up': 'countUp 2s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+            'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 3s infinite',
+            'scale-in': 'scaleIn 0.5s ease-out forwards',
+            'gradient': 'gradient 3s ease infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
             },
-            fontFamily: {
-              sans: ['"DM Sans"', 'sans-serif'],
-              serif: ['"Playfair Display"', 'serif'],
+            countUp: {
+              from: { transform: 'translateY(20px)', opacity: 0 },
+              to: { transform: 'translateY(0)', opacity: 1 },
             },
-            animation: {
-              'float': 'float 6s ease-in-out infinite',
-              'float-delayed': 'float 6s ease-in-out 3s infinite',
-              'count-up': 'countUp 2s ease-out forwards',
-              'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+            fadeInUp: {
+              '0%': { opacity: 0, transform: 'translateY(30px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
             },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
-              },
-              countUp: {
-                from: { transform: 'translateY(20px)', opacity: 0 },
-                to: { transform: 'translateY(0)', opacity: 1 },
-              },
-              'pulse-glow': {
-                '0%, 100%': {
-                  boxShadow: '0 0 0 0 rgba(212, 163, 115, 0.7)'
-                },
-                '70%': {
-                  boxShadow: '0 0 0 10px rgba(212, 163, 115, 0)'
-                }
-              }
+            slideInLeft: {
+              '0%': { opacity: 0, transform: 'translateX(-30px)' },
+              '100%': { opacity: 1, transform: 'translateX(0)' },
+            },
+            slideInRight: {
+              '0%': { opacity: 0, transform: 'translateX(30px)' },
+              '100%': { opacity: 1, transform: 'translateX(0)' },
+            },
+            scaleIn: {
+              '0%': { transform: 'scale(0.9)', opacity: 0 },
+              '100%': { transform: 'scale(1)', opacity: 1 },
+            },
+            gradient: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
             }
           }
         }
       }
-    </script>
-    <style>
-      /* Custom Reveal Animation Styles */
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-      }
-      
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
+    }
+  </script>
+  <style>
+    /* Custom Reveal Animation Styles */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-100 {
+      transition-delay: 100ms;
+    }
+
+    .reveal-delay-200 {
+      transition-delay: 200ms;
+    }
+
+    .reveal-delay-300 {
+      transition-delay: 300ms;
+    }
+
+    .reveal-delay-400 {
+      transition-delay: 400ms;
+    }
+
+    .reveal-delay-500 {
+      transition-delay: 500ms;
+    }
+
+    /* Glass effect */
+    .glass {
+      background: rgba(248, 244, 233, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Section dividers */
+    .section-divider {
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, #D4A373 50%, transparent 100%);
+      margin: 0 auto;
+      width: 80%;
+      max-width: 200px;
+    }
+
+    /* Parallax effect for cards */
+    .parallax-card {
+      transition: transform 0.3s ease-out;
+    }
+
+    .parallax-card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    /* Dark mode styles */
+    .dark .glass {
+      background: rgba(30, 41, 59, 0.85);
+    }
+
+    /* Loading animation */
+    .loading-dots {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+
+    .loading-dots div {
+      position: absolute;
+      top: 33px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #D4A373;
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+
+    .loading-dots div:nth-child(1) {
+      left: 8px;
+      animation: loading-dots1 0.6s infinite;
+    }
+
+    .loading-dots div:nth-child(2) {
+      left: 8px;
+      animation: loading-dots2 0.6s infinite;
+    }
+
+    .loading-dots div:nth-child(3) {
+      left: 32px;
+      animation: loading-dots2 0.6s infinite;
+    }
+
+    .loading-dots div:nth-child(4) {
+      left: 56px;
+      animation: loading-dots3 0.6s infinite;
+    }
+
+    @keyframes loading-dots1 {
+      0% {
+        transform: scale(0);
       }
 
-      .reveal-delay-100 { transition-delay: 100ms; }
-      .reveal-delay-200 { transition-delay: 200ms; }
-      .reveal-delay-300 { transition-delay: 300ms; }
-      .reveal-delay-400 { transition-delay: 400ms; }
-      .reveal-delay-500 { transition-delay: 500ms; }
+      100% {
+        transform: scale(1);
+      }
+    }
 
-      /* Glass effect */
-      .glass {
-        background: rgba(253, 248, 240, 0.85);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+    @keyframes loading-dots3 {
+      0% {
+        transform: scale(1);
       }
 
-      /* Section dividers */
-      .section-divider {
-        height: 3px;
-        background: linear-gradient(90deg, transparent 0%, #D4A373 50%, transparent 100%);
-        margin: 0 auto;
-        width: 80%;
-        max-width: 200px;
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    @keyframes loading-dots2 {
+      0% {
+        transform: translate(0, 0);
       }
 
-      /* Parallax effect for cards */
-      .parallax-card {
-        transition: transform 0.3s ease-out;
+      100% {
+        transform: translate(24px, 0);
       }
+    }
 
-      .parallax-card:hover {
-        transform: translateY(-5px) scale(1.02);
-      }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
 
-      /* Dark mode styles */
-      .dark .glass {
-        background: rgba(30, 41, 59, 0.85);
-      }
+    ::-webkit-scrollbar-track {
+      background: #EFE8D7;
+    }
 
-      /* Loading animation */
-      .loading-dots {
-        display: inline-block;
-        position: relative;
-        width: 80px;
-        height: 80px;
-      }
-      .loading-dots div {
-        position: absolute;
-        top: 33px;
-        width: 13px;
-        height: 13px;
-        border-radius: 50%;
-        background: #D4A373;
-        animation-timing-function: cubic-bezier(0, 1, 1, 0);
-      }
-      .loading-dots div:nth-child(1) {
-        left: 8px;
-        animation: loading-dots1 0.6s infinite;
-      }
-      .loading-dots div:nth-child(2) {
-        left: 8px;
-        animation: loading-dots2 0.6s infinite;
-      }
-      .loading-dots div:nth-child(3) {
-        left: 32px;
-        animation: loading-dots2 0.6s infinite;
-      }
-      .loading-dots div:nth-child(4) {
-        left: 56px;
-        animation: loading-dots3 0.6s infinite;
-      }
-      @keyframes loading-dots1 {
-        0% { transform: scale(0); }
-        100% { transform: scale(1); }
-      }
-      @keyframes loading-dots3 {
-        0% { transform: scale(1); }
-        100% { transform: scale(0); }
-      }
-      @keyframes loading-dots2 {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(24px, 0); }
-      }
+    ::-webkit-scrollbar-thumb {
+      background: #D4A373;
+      border-radius: 4px;
+    }
 
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #F5EDE0;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #D4A373;
-        border-radius: 4px;
-      }
-      .dark ::-webkit-scrollbar-track {
-        background: #1E293B;
-      }
-      .dark ::-webkit-scrollbar-thumb {
-        background: #D4A373;
-      }
-    </style>
+    .dark ::-webkit-scrollbar-track {
+      background: #1E293B;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+      background: #D4A373;
+    }
+
+    /* Animated gradient text */
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradient 3s ease infinite;
+    }
+
+    /* Timeline styles */
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #D4A373;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 1.5rem;
+      width: 2px;
+      height: calc(100% - 1rem);
+      background: #D4A373;
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+  </style>
 </head>
-<body class="bg-sage-50 text-slate-800 antialiased selection:bg-sage-200 selection:text-sage-900 overflow-x-hidden transition-colors duration-300 dark:bg-slate-900 dark:text-slate-200">
-    
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-sage-100 dark:bg-slate-800">
-      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <!-- Left Links -->
-        <div class="hidden md:flex items-center gap-6">
-          <a href="#home" class="text-sm font-medium text-earth-gold hover:text-sage-700 transition-colors tracking-wide dark:text-earth-gold-light dark:hover:text-white">Home</a>
-          <a href="#mission" class="text-sm font-medium text-earth-gold hover:text-sage-700 transition-colors tracking-wide dark:text-earth-gold-light dark:hover:text-white">Mission</a>
+
+<body
+  class="bg-cream text-slate-800 antialiased selection:bg-sage-200 selection:text-sage-900 overflow-x-hidden transition-colors duration-300 dark:bg-slate-900 dark:text-slate-200">
+
+  <!-- Contact Bar with Golden Background -->
+  <div class="fixed top-0 left-0 right-0 z-50 bg-earth-gold py-2 px-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="tel:+11234567890"
+        class="flex items-center gap-2 text-sage-800 hover:text-sage-900 transition-colors group">
+        <i data-lucide="phone" class="w-3 h-3 group-hover:scale-110 transition-transform"></i>
+        <span class="text-xs font-medium tracking-wide">+1 (123) 456-7890</span>
+      </a>
+
+      <a href="mailto:info@towaf.org"
+        class="flex items-center gap-2 text-sage-800 hover:text-sage-900 transition-colors group">
+        <i data-lucide="mail" class="w-3 h-3 group-hover:scale-110 transition-transform"></i>
+        <span class="text-xs font-medium tracking-wide">info@towaf.org</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Navigation - Positioned below contact bar -->
+  <nav id="navbar" class="fixed top-10 left-0 right-0 z-40 transition-all duration-300 py-4 bg-sage-800">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+
+      <!-- Left Navigation Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home"
+          class="text-sm font-medium text-earth-gold-light hover:text-white transition-colors tracking-wide">Home</a>
+        <a href="#mission"
+          class="text-sm font-medium text-earth-gold-light hover:text-white transition-colors tracking-wide">Mission</a>
+        <a href="#founder"
+          class="text-sm font-medium text-earth-gold-light hover:text-white transition-colors tracking-wide">Founder</a>
+        <a href="#programs"
+          class="text-sm font-medium text-earth-gold-light hover:text-white transition-colors tracking-wide">Programs</a>
+      </div>
+
+      <!-- Center Logo -->
+      <div class="flex items-center gap-2 z-50 absolute left-1/2 transform -translate-x-1/2">
+        <div class="bg-earth-gold text-white p-2 rounded-full shadow-lg transition-colors duration-300">
+          <i data-lucide="heart" class="w-5 h-5 text-white fill-current"></i>
+        </div>
+        <span class="text-xl font-serif font-bold tracking-wide text-earth-gold-light">
+          TOWAF
+        </span>
+      </div>
+
+      <!-- Right Navigation Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#impact"
+          class="text-sm font-medium text-earth-gold-light hover:text-white transition-colors tracking-wide">Impact</a>
+        <a href="#governance"
+          class="text-sm font-medium text-earth-gold-light hover:text-white transition-colors tracking-wide">Governance</a>
+        <a href="#testimonials"
+          class="text-sm font-medium text-earth-gold-light hover:text-white transition-colors tracking-wide">Testimonials</a>
+        <a href="#contact"
+          class="text-sm font-medium text-earth-gold-light hover:text-white transition-colors tracking-wide">Contact</a>
+        <button id="dark-mode-toggle"
+          class="p-2 rounded-full bg-sage-700 text-earth-gold-light hover:bg-sage-600 transition-colors">
+          <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden z-50 text-earth-gold-light p-2">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Mobile Nav Overlay -->
+      <div id="mobile-menu"
+        class="fixed inset-0 bg-sage-900/95 backdrop-blur-sm z-40 flex flex-col items-center justify-center gap-6 transition-transform duration-300 ease-in-out translate-x-full md:hidden">
+        <!-- Close Button -->
+        <button id="mobile-close-btn" class="absolute top-6 right-6 text-earth-gold-light p-2">
+          <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+
+        <!-- Logo in Mobile Menu -->
+        <div class="flex items-center gap-3 mb-8">
+          <div class="bg-earth-gold text-white p-3 rounded-full shadow-lg">
+            <i data-lucide="heart" class="w-6 h-6 text-white fill-current"></i>
           </div>
-          <span class="text-xl font-serif font-bold tracking-wide text-sage-700 dark:text-sage-300">
+          <span class="text-2xl font-serif font-bold tracking-wide text-earth-gold-light">
             TOWAF
           </span>
         </div>
 
-        <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center gap-6">
-          <a href="#home" class="text-sm font-medium text-sage-700 hover:text-earth-gold transition-colors tracking-wide dark:text-sage-300">Home</a>
-          <a href="#mission" class="text-sm font-medium text-sage-700 hover:text-earth-gold transition-colors tracking-wide dark:text-sage-300">Mission</a>
-          <a href="#programs" class="text-sm font-medium text-sage-700 hover:text-earth-gold transition-colors tracking-wide dark:text-sage-300">Programs</a>
-          <a href="#impact" class="text-sm font-medium text-sage-700 hover:text-earth-gold transition-colors tracking-wide dark:text-sage-300">Impact</a>
-          <a href="#testimonials" class="text-sm font-medium text-sage-700 hover:text-earth-gold transition-colors tracking-wide dark:text-sage-300">Testimonials</a>
-          <a href="#contact" class="text-sm font-medium text-sage-700 hover:text-earth-gold transition-colors tracking-wide dark:text-sage-300">Contact</a>
-          <a href="#donate" class="px-5 py-2 bg-earth-gold text-white text-sm font-medium rounded-full hover:bg-yellow-600 transition-all hover:scale-105 shadow-lg shadow-earth-gold/30">
-            Donate
-          </a>
-          <button id="dark-mode-toggle" class="p-2 rounded-full bg-sage-100 text-sage-700 hover:bg-sage-200 transition-colors dark:bg-slate-700 dark:text-sage-300">
-            <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
-            <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
-          </button>
+        <!-- Navigation Links -->
+        <div class="flex flex-col items-center gap-6 w-full px-6">
+          <a href="#home"
+            class="mobile-link w-full text-center text-2xl font-serif text-earth-gold-light hover:text-white transition-all duration-300 py-4 border-b border-sage-700/50 hover:border-earth-gold">Home</a>
+          <a href="#mission"
+            class="mobile-link w-full text-center text-2xl font-serif text-earth-gold-light hover:text-white transition-all duration-300 py-4 border-b border-sage-700/50 hover:border-earth-gold">Mission</a>
+          <a href="#founder"
+            class="mobile-link w-full text-center text-2xl font-serif text-earth-gold-light hover:text-white transition-all duration-300 py-4 border-b border-sage-700/50 hover:border-earth-gold">Founder</a>
+          <a href="#programs"
+            class="mobile-link w-full text-center text-2xl font-serif text-earth-gold-light hover:text-white transition-all duration-300 py-4 border-b border-sage-700/50 hover:border-earth-gold">Programs</a>
+          <a href="#impact"
+            class="mobile-link w-full text-center text-2xl font-serif text-earth-gold-light hover:text-white transition-all duration-300 py-4 border-b border-sage-700/50 hover:border-earth-gold">Impact</a>
+          <a href="#governance"
+            class="mobile-link w-full text-center text-2xl font-serif text-earth-gold-light hover:text-white transition-all duration-300 py-4 border-b border-sage-700/50 hover:border-earth-gold">Governance</a>
+          <a href="#testimonials"
+            class="mobile-link w-full text-center text-2xl font-serif text-earth-gold-light hover:text-white transition-all duration-300 py-4 border-b border-sage-700/50 hover:border-earth-gold">Testimonials</a>
+          <a href="#contact"
+            class="mobile-link w-full text-center text-2xl font-serif text-earth-gold-light hover:text-white transition-all duration-300 py-4 border-b border-sage-700/50 hover:border-earth-gold">Contact</a>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden z-50 text-sage-700 p-2 dark:text-sage-300">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-
-        <!-- Mobile Nav Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 bg-sage-50 dark:bg-slate-900 z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out translate-x-full md:hidden">
-          <a href="#home" class="mobile-link text-3xl font-serif text-sage-700 hover:text-earth-gold dark:text-sage-300">Home</a>
-          <a href="#mission" class="mobile-link text-3xl font-serif text-sage-700 hover:text-earth-gold dark:text-sage-300">Mission</a>
-          <a href="#programs" class="mobile-link text-3xl font-serif text-sage-700 hover:text-earth-gold dark:text-sage-300">Programs</a>
-          <a href="#impact" class="mobile-link text-3xl font-serif text-sage-700 hover:text-earth-gold dark:text-sage-300">Impact</a>
-          <a href="#testimonials" class="mobile-link text-3xl font-serif text-sage-700 hover:text-earth-gold dark:text-sage-300">Testimonials</a>
-          <a href="#contact" class="mobile-link text-3xl font-serif text-sage-700 hover:text-earth-gold dark:text-sage-300">Contact</a>
-          <a href="#donate" class="mobile-link px-8 py-3 bg-earth-gold text-white font-medium rounded-full text-lg mt-4">Donate</a>
-          <button id="mobile-dark-mode-toggle" class="p-4 rounded-full bg-sage-100 text-sage-700 hover:bg-sage-200 transition-colors dark:bg-slate-700 dark:text-sage-300 mt-4">
+        <!-- Dark Mode Toggle and Contact Info -->
+        <div class="flex flex-col items-center gap-4 mt-8">
+          <button id="mobile-dark-mode-toggle"
+            class="p-4 rounded-full bg-sage-700 text-earth-gold-light hover:bg-sage-600 transition-colors">
             <i data-lucide="moon" class="w-6 h-6 dark:hidden"></i>
             <i data-lucide="sun" class="w-6 h-6 hidden dark:block"></i>
           </button>
+
+          <!-- Mobile Contact Info -->
+          <div class="flex flex-col items-center gap-3 text-earth-gold-light">
+            <a href="tel:+11234567890" class="flex items-center gap-2 hover:text-white transition-colors">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              <span class="text-sm">+1 (123) 456-7890</span>
+            </a>
+            <a href="mailto:info@towaf.org" class="flex items-center gap-2 hover:text-white transition-colors">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span class="text-sm">info@towaf.org</span>
+            </a>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Progress Bar -->
-    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-earth-gold z-50 transition-all duration-300" style="width: 0%"></div>
+  <!-- Progress Bar -->
+  <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-earth-gold z-50 transition-all duration-300"
+    style="width: 0%"></div>
 
-    <main>
-      <!-- Hero Section -->
-      <section id="home" class="relative min-h-screen pt-32 pb-20 px-6 flex items-center overflow-hidden bg-sage-50 dark:bg-slate-900">
-        <!-- Background Blobs -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-sage-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/4 animate-float dark:bg-sage-900/30"></div>
-        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-earth-gold-light/30 rounded-full blur-3xl opacity-60 translate-y-1/3 -translate-x-1/4 animate-float-delayed"></div>
+  <main>
+    <!-- Hero Section -->
+    <section id="home"
+      class="relative min-h-screen pt-32 pb-20 px-6 flex items-center overflow-hidden bg-cream dark:bg-slate-900">
+      <!-- Background Blobs -->
+      <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-sage-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/4 animate-float dark:bg-sage-900/30">
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-earth-gold-light/30 rounded-full blur-3xl opacity-60 translate-y-1/3 -translate-x-1/4 animate-float-delayed">
+      </div>
 
-        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div class="order-2 lg:order-1">
-            <div class="reveal inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-full shadow-sm mb-8 border border-sage-100 dark:border-slate-700">
-              <span class="w-2 h-2 rounded-full bg-earth-gold animate-pulse"></span>
-              <span class="text-xs font-bold text-sage-700 dark:text-sage-300 tracking-wider uppercase">Non-Profit 501(c)(3)</span>
+      <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div class="order-2 lg:order-1">
+          <div
+            class="reveal inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-full shadow-sm mb-8 border border-sage-100 dark:border-slate-700">
+            <span class="w-2 h-2 rounded-full bg-earth-gold animate-pulse"></span>
+            <span class="text-xs font-bold text-sage-700 dark:text-sage-300 tracking-wider uppercase">Non-Profit
+              501(c)(3)</span>
+          </div>
+
+          <h1
+            class="reveal reveal-delay-100 text-5xl lg:text-7xl font-serif font-bold text-sage-700 dark:text-sage-300 leading-[1.1] mb-6">
+            Restoring <span class="text-sage-500 italic">Hope</span>,<br />
+            Rebuilding <span class="relative inline-block">
+              Lives
+              <svg class="absolute w-full h-3 bottom-1 left-0 text-earth-gold opacity-40 -z-10" viewBox="0 0 100 10"
+                preserveAspectRatio="none">
+                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
+              </svg>
+            </span>
+          </h1>
+
+          <p class="reveal reveal-delay-200 text-lg text-slate-700 dark:text-slate-400 mb-8 max-w-xl leading-relaxed">
+            Based in Roseville, CA, operating in Africa. We turn post-conflict communities into resilient,
+            self-sustaining centers of prosperity, starting with Tigray, Ethiopia.
+          </p>
+
+          <div class="reveal reveal-delay-300 flex flex-wrap gap-4">
+            <button
+              class="group px-8 py-4 bg-sage-500 text-white rounded-full font-medium transition-all hover:bg-sage-600 hover:shadow-xl hover:shadow-sage-500/20 flex items-center gap-2">
+              Join our Mission
+              <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+            <button
+              class="group px-8 py-4 bg-white dark:bg-slate-800 text-sage-700 dark:text-sage-300 border border-sage-100 dark:border-slate-700 rounded-full font-medium transition-all hover:border-sage-300 dark:hover:border-sage-500 hover:bg-sage-50 dark:hover:bg-slate-700 flex items-center gap-2">
+              <i data-lucide="play-circle" class="w-4 h-4"></i>
+              Watch Our Story
+            </button>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2 relative reveal reveal-delay-200">
+          <div
+            class="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-sage-900/10 aspect-[4/5] lg:aspect-square group">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop"
+              alt="Students learning in a classroom"
+              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              loading="lazy" />
+            <!-- Gradient overlay for better text readability -->
+            <div class="absolute inset-0 bg-gradient-to-t from-sage-900/70 via-transparent to-sage-900/20"></div>
+            <div class="absolute bottom-8 left-8 right-8 text-white">
+              <p class="font-serif text-2xl italic">"Education is the most powerful weapon which you can use to change
+                the world."</p>
             </div>
-            
-            <h1 class="reveal reveal-delay-100 text-5xl lg:text-7xl font-serif font-bold text-sage-700 dark:text-sage-300 leading-[1.1] mb-6">
-              Restoring <span class="text-sage-500 italic">Hope</span>,<br />
-              Rebuilding <span class="relative inline-block">
-                Lives
-                <svg class="absolute w-full h-3 bottom-1 left-0 text-earth-gold opacity-40 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
-                </svg>
-              </span>
-            </h1>
+          </div>
+        </div>
 
-            <p class="reveal reveal-delay-200 text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-xl leading-relaxed">
-              Based in Roseville, CA, operating in Africa. We turn post-conflict communities into resilient, self-sustaining centers of prosperity, starting with Tigray, Ethiopia.
-            </p>
+        <!-- Floating Cards Container - Compact Horizontal -->
+        <div class="absolute -bottom-10 left-0 right-0 hidden md:flex justify-center gap-4 z-20 px-6">
 
-            <div class="reveal reveal-delay-300 flex flex-wrap gap-4">
-              <button class="group px-8 py-4 bg-sage-500 text-white rounded-full font-medium transition-all hover:bg-sage-600 hover:shadow-xl hover:shadow-sage-500/20 flex items-center gap-2">
-                Join our Mission
-                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-              </button>
-              <button class="group px-8 py-4 bg-white dark:bg-slate-800 text-sage-700 dark:text-sage-300 border border-sage-100 dark:border-slate-700 rounded-full font-medium transition-all hover:border-sage-300 dark:hover:border-sage-500 hover:bg-sage-50 dark:hover:bg-slate-700 flex items-center gap-2">
-                <i data-lucide="play-circle" class="w-4 h-4"></i>
-                Watch Our Story
-              </button>
+          <!-- Card 1 - Scholarships -->
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl w-44 animate-float">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-earth-gold/20 rounded-full flex items-center justify-center text-earth-gold">
+                <i data-lucide="trophy" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Scholarships</p>
+                <p class="font-bold text-sage-700 dark:text-sage-300 text-sm">12 Awards</p>
+              </div>
+            </div>
+            <div class="h-1 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div class="h-full bg-earth-gold w-3/4"></div>
             </div>
           </div>
 
-          <div class="order-1 lg:order-2 relative reveal reveal-delay-200">
-            <div class="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-sage-900/10 aspect-[4/5] lg:aspect-square group">
-              <img 
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop" 
-                alt="Students learning in a classroom" 
-                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                loading="lazy"
-              />
-              <!-- Gradient overlay for better text readability -->
-              <div class="absolute inset-0 bg-gradient-to-t from-sage-900/70 via-transparent to-sage-900/20"></div>
-              <div class="absolute bottom-8 left-8 right-8 text-white">
-                <p class="font-serif text-2xl italic">"Education is the most powerful weapon which you can use to change the world."</p>
+          <!-- Card 2 - Students Mentored -->
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl w-44 animate-float"
+            style="animation-delay: 0.5s;">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-earth-gold/20 rounded-full flex items-center justify-center text-earth-gold">
+                <i data-lucide="users" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Mentored</p>
+                <p class="font-bold text-sage-700 dark:text-sage-300 text-sm">1,600+</p>
               </div>
             </div>
-            
-            <!-- Floating Card -->
-            <div class="absolute -bottom-10 -left-10 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl max-w-xs hidden md:block animate-float z-20">
-              <div class="flex items-center gap-4 mb-3">
-                <div class="w-12 h-12 bg-earth-gold/10 rounded-full flex items-center justify-center text-earth-gold">
-                   <i data-lucide="trophy" class="w-6 h-6"></i>
+            <div class="h-1 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div class="h-full bg-earth-gold w-4/5"></div>
+            </div>
+          </div>
+
+          <!-- Card 3 - Computers -->
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl w-44 animate-float"
+            style="animation-delay: 1s;">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-earth-gold/20 rounded-full flex items-center justify-center text-earth-gold">
+                <i data-lucide="laptop" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Computers</p>
+                <p class="font-bold text-sage-700 dark:text-sage-300 text-sm">155 Donated</p>
+              </div>
+            </div>
+            <div class="h-1 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div class="h-full bg-earth-gold w-2/3"></div>
+            </div>
+          </div>
+
+          <!-- Card 4 - SAT Support -->
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl w-44 animate-float"
+            style="animation-delay: 1.5s;">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-earth-gold/20 rounded-full flex items-center justify-center text-earth-gold">
+                <i data-lucide="book-open" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">SAT Support</p>
+                <p class="font-bold text-sage-700 dark:text-sage-300 text-sm">400+</p>
+              </div>
+            </div>
+            <div class="h-1 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div class="h-full bg-earth-gold w-3/4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 reveal reveal-delay-500">
+        <div class="flex flex-col items-center text-sage-600 dark:text-sage-400">
+          <span class="text-sm mb-2">Scroll to explore</span>
+          <i data-lucide="chevron-down" class="w-5 h-5 animate-bounce"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dark Green Boundary Line -->
+    <div class="w-full h-2 bg-sage-800"></div>
+
+    <!-- About Section - Enhanced -->
+    <section id="mission" class="py-24 px-6 bg-cream-dark dark:bg-slate-800 relative overflow-hidden">
+      <!-- Enhanced Background Elements -->
+      <div
+        class="absolute top-20 left-10 w-64 h-64 bg-sage-50 dark:bg-sage-900/20 rounded-full blur-3xl opacity-60 pointer-events-none animate-pulse-slow">
+      </div>
+      <div
+        class="absolute bottom-10 right-10 w-48 h-48 bg-earth-gold/10 dark:bg-earth-gold/5 rounded-full blur-2xl opacity-40 pointer-events-none animate-float">
+      </div>
+
+      <!-- Floating particles -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-earth-gold/30 rounded-full animate-float-delayed"></div>
+        <div class="absolute top-3/4 right-1/3 w-1 h-1 bg-sage-400/40 rounded-full animate-float-slow"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <!-- Enhanced Header -->
+        <div class="text-center mb-20 reveal">
+          <span class="text-earth-gold font-bold tracking-widest text-xs uppercase mb-4 block animate-fade-in">
+            Who We Are
+          </span>
+          <h2 class="text-4xl md:text-6xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-6 leading-tight">
+            Restoring Hope, <span
+              class="text-earth-gold animate-gradient bg-gradient-to-r from-earth-gold to-amber-400 bg-clip-text text-transparent">Rebuilding
+              Lives</span>
+          </h2>
+          <div class="w-24 h-1 bg-earth-gold mx-auto rounded-full animate-scale-in"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+          <!-- Mission Card - Enhanced -->
+          <div class="lg:col-span-4 flex reveal reveal-delay-100">
+            <div
+              class="bg-white dark:bg-slate-700 p-8 rounded-3xl h-full border-2 border-sage-100 dark:border-slate-600 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-earth-gold/30 group w-full shadow-lg relative overflow-hidden">
+              <div
+                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-earth-gold to-amber-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+              </div>
+              <div
+                class="w-12 h-12 bg-sage-50 dark:bg-sage-900/30 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-sage-700 dark:text-sage-300 group-hover:scale-110 group-hover:bg-earth-gold/10 group-hover:text-earth-gold transition-all duration-300">
+                <i data-lucide="target" class="w-6 h-6"></i>
+              </div>
+              <h3
+                class="text-2xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-4 group-hover:text-earth-gold transition-colors duration-300">
+                Our Mission</h3>
+              <p
+                class="text-slate-700 dark:text-slate-400 leading-relaxed group-hover:text-slate-800 dark:group-hover:text-slate-300 transition-colors duration-300">
+                To restore hope and rebuild lives in post-war and crisis-affected communities in Africa, starting with
+                Tigray, Ethiopia. We focus on healing and holistic recovery.
+              </p>
+            </div>
+          </div>
+
+          <!-- Vision Card - Enhanced -->
+          <div class="lg:col-span-4 flex reveal reveal-delay-200">
+            <div
+              class="bg-white dark:bg-slate-700 p-8 rounded-3xl h-full border-2 border-sage-100 dark:border-slate-600 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-earth-gold/30 group w-full shadow-lg relative overflow-hidden">
+              <div
+                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-earth-gold transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100">
+              </div>
+              <div
+                class="w-12 h-12 bg-sage-50 dark:bg-sage-900/30 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-sage-700 dark:text-sage-300 group-hover:scale-110 group-hover:bg-earth-gold/10 group-hover:text-earth-gold transition-all duration-300">
+                <i data-lucide="lightbulb" class="w-6 h-6"></i>
+              </div>
+              <h3
+                class="text-2xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-4 group-hover:text-earth-gold transition-colors duration-300">
+                Our Vision</h3>
+              <p
+                class="text-slate-700 dark:text-slate-400 leading-relaxed group-hover:text-slate-800 dark:group-hover:text-slate-300 transition-colors duration-300">
+                To turn post-conflict communities into resilient, self-sustaining centers of prosperity where every
+                individual has the opportunity to thrive with dignity.
+              </p>
+            </div>
+          </div>
+
+          <!-- Founder Card - Enhanced -->
+          <div class="lg:col-span-4 flex reveal reveal-delay-300">
+            <div
+              class="bg-gradient-to-br from-sage-500 via-sage-600 to-sage-700 p-8 rounded-3xl h-full text-white relative overflow-hidden group w-full shadow-lg transform transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl">
+              <!-- Animated background elements -->
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700 ease-in-out">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 w-24 h-24 bg-earth-gold/20 rounded-full translate-y-1/2 -translate-x-1/2 group-hover:scale-125 transition-transform duration-700 ease-in-out delay-200">
+              </div>
+
+              <!-- Shine effect -->
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out">
+              </div>
+
+              <div class="relative z-10">
+                <div
+                  class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 text-earth-gold group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300">
+                  <i data-lucide="user-check" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-2 group-hover:scale-105 transition-transform duration-300">
+                  Our Origin</h3>
+                <div class="h-px w-12 bg-earth-gold mb-4 group-hover:w-16 transition-all duration-300"></div>
+                <p class="text-sage-100 leading-relaxed mb-4 group-hover:text-white transition-colors duration-300">
+                  Founded in Roseville, CA by <strong
+                    class="text-earth-gold group-hover:text-amber-200 transition-colors duration-300">Dr. Fetien Abay
+                    Abera</strong>, an Ethiopian professor and humanitarian dedicated to transformative change.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enhanced Values Strip -->
+        <div class="mt-20 pt-12 border-t border-sage-200 dark:border-slate-700 reveal reveal-delay-400">
+          <div class="text-center mb-8">
+            <h4 class="text-lg font-serif font-semibold text-sage-700 dark:text-sage-300 mb-2">Our Core Values</h4>
+            <div class="w-12 h-0.5 bg-earth-gold mx-auto rounded-full"></div>
+          </div>
+          <div class="flex flex-wrap justify-center gap-6 md:gap-12">
+            <!-- Animated value items -->
+            <div
+              class="value-item flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm border border-sage-200 dark:border-slate-600 text-sage-700 dark:text-sage-300 font-medium transition-all duration-300 hover:scale-110 hover:bg-white hover:shadow-lg hover:border-earth-gold/30 group">
+              <i data-lucide="heart"
+                class="w-5 h-5 text-earth-gold fill-current group-hover:scale-125 transition-transform duration-300"></i>
+              <span>Peace</span>
+            </div>
+            <div
+              class="value-item flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm border border-sage-200 dark:border-slate-600 text-sage-700 dark:text-sage-300 font-medium transition-all duration-300 hover:scale-110 hover:bg-white hover:shadow-lg hover:border-earth-gold/30 group">
+              <i data-lucide="heart"
+                class="w-5 h-5 text-earth-gold fill-current group-hover:scale-125 transition-transform duration-300"></i>
+              <span>Hope</span>
+            </div>
+            <div
+              class="value-item flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm border border-sage-200 dark:border-slate-600 text-sage-700 dark:text-sage-300 font-medium transition-all duration-300 hover:scale-110 hover:bg-white hover:shadow-lg hover:border-earth-gold/30 group">
+              <i data-lucide="heart"
+                class="w-5 h-5 text-earth-gold fill-current group-hover:scale-125 transition-transform duration-300"></i>
+              <span>Dignity</span>
+            </div>
+            <div
+              class="value-item flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm border border-sage-200 dark:border-slate-600 text-sage-700 dark:text-sage-300 font-medium transition-all duration-300 hover:scale-110 hover:bg-white hover:shadow-lg hover:border-earth-gold/30 group">
+              <i data-lucide="heart"
+                class="w-5 h-5 text-earth-gold fill-current group-hover:scale-125 transition-transform duration-300"></i>
+              <span>Development</span>
+            </div>
+            <div
+              class="value-item flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm border border-sage-200 dark:border-slate-600 text-sage-700 dark:text-sage-300 font-medium transition-all duration-300 hover:scale-110 hover:bg-white hover:shadow-lg hover:border-earth-gold/30 group">
+              <i data-lucide="heart"
+                class="w-5 h-5 text-earth-gold fill-current group-hover:scale-125 transition-transform duration-300"></i>
+              <span>Inclusion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Section Divider -->
+    <div class="section-divider relative overflow-hidden">
+      <div class="h-px bg-gradient-to-r from-transparent via-sage-300 dark:via-sage-600 to-transparent"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div class="w-3 h-3 bg-earth-gold rounded-full animate-ping opacity-20"></div>
+      </div>
+    </div>
+
+    <!-- Founder Section -->
+    <section id="founder" class="py-24 px-6 bg-cream dark:bg-slate-900 relative overflow-hidden">
+      <!-- Background Elements -->
+      <div
+        class="absolute top-0 left-0 w-72 h-72 bg-sage-100 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2 dark:bg-sage-900/20">
+      </div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-earth-gold/10 rounded-full blur-3xl opacity-20 translate-x-1/3 translate-y-1/3">
+      </div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16 reveal">
+          <span class="text-earth-gold font-bold tracking-widest text-xs uppercase mb-2 block">Our Inspiration</span>
+          <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300">Meet Our Founder</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Founder Image -->
+          <div class="reveal reveal-delay-100">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1000&auto=format&fit=crop"
+                alt="Dr. Fetien Abay Abera"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-sage-900/40 via-transparent to-sage-900/10"></div>
+              <!-- Floating badges -->
+              <div class="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg animate-float">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="award" class="w-5 h-5 text-earth-gold"></i>
+                  <span class="text-sm font-bold text-sage-700">African Union Award</span>
+                </div>
+              </div>
+              <div
+                class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg animate-float"
+                style="animation-delay: 1s;">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="graduation-cap" class="w-5 h-5 text-earth-gold"></i>
+                  <span class="text-sm font-bold text-sage-700">Professor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Founder Content -->
+          <div class="reveal reveal-delay-200">
+            <h3 class="text-3xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-4">Dr. Fetien Abay Abera</h3>
+            <p class="text-lg text-slate-700 dark:text-slate-400 mb-6 leading-relaxed">
+              A leading scientist, educator, and humanitarian who has dedicated her life to transformative change in
+              African communities.
+            </p>
+
+            <!-- Education Timeline -->
+            <div class="mb-8">
+              <h4 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-4 flex items-center gap-2">
+                <i data-lucide="graduation-cap" class="w-5 h-5 text-earth-gold"></i>
+                Academic Journey
+              </h4>
+              <div class="space-y-4">
+                <div class="timeline-item">
+                  <div
+                    class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-sage-100 dark:border-slate-700">
+                    <h5 class="font-bold text-sage-700 dark:text-sage-300">Diploma & BSc in Plant Science</h5>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Hawassa and Haramaya Universities, Ethiopia
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div
+                    class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-sage-100 dark:border-slate-700">
+                    <h5 class="font-bold text-sage-700 dark:text-sage-300">MSc in Rural Resource Management</h5>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">University of Wales, UK</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div
+                    class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-sage-100 dark:border-slate-700">
+                    <h5 class="font-bold text-sage-700 dark:text-sage-300">PhD in Plant Breeding & Genetics</h5>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Norwegian University of Life Sciences</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Awards -->
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="bg-gradient-to-br from-sage-50 to-sage-100 dark:from-sage-800 dark:to-sage-900 p-4 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
+                <i data-lucide="award"
+                  class="w-8 h-8 text-earth-gold mx-auto mb-2 group-hover:scale-110 transition-transform"></i>
+                <h5 class="font-bold text-sage-700 dark:text-sage-300 text-sm">African Union Kwame Nkrumah Award</h5>
+                <p class="text-sage-600 dark:text-sage-400 text-xs">2015</p>
+              </div>
+              <div
+                class="bg-gradient-to-br from-sage-50 to-sage-100 dark:from-sage-800 dark:to-sage-900 p-4 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
+                <i data-lucide="star"
+                  class="w-8 h-8 text-earth-gold mx-auto mb-2 group-hover:scale-110 transition-transform"></i>
+                <h5 class="font-bold text-sage-700 dark:text-sage-300 text-sm">IMPRESA Award</h5>
+                <p class="text-sage-600 dark:text-sage-400 text-xs">2nd Runner-Up 2017</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Founder Quote -->
+        <div class="mt-16 reveal reveal-delay-300">
+          <div class="bg-gradient-to-r from-sage-500 to-sage-600 rounded-3xl p-8 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2">
+            </div>
+            <div class="relative z-10">
+              <i data-lucide="quote" class="w-12 h-12 text-earth-gold mb-4 opacity-70"></i>
+              <p class="text-xl font-serif italic mb-4">
+                "Women must be assertive, believe in their potential and strive for greater heights. We should not
+                victimize ourselves, but rather build our capacity in all our fronts."
+              </p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                  <i data-lucide="user" class="w-6 h-6 text-earth-gold"></i>
                 </div>
                 <div>
-                  <p class="text-sm text-slate-500 dark:text-slate-400">Scholarships Won</p>
-                  <p class="font-bold text-sage-700 dark:text-sage-300 text-lg">12 Global Awards</p>
-                </div>
-              </div>
-              <div class="h-1 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                <div class="h-full bg-earth-gold w-3/4"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 reveal reveal-delay-500">
-          <div class="flex flex-col items-center text-sage-600 dark:text-sage-400">
-            <span class="text-sm mb-2">Scroll to explore</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 animate-bounce"></i>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section Divider -->
-      <div class="section-divider"></div>
-
-      <!-- About Section -->
-      <section id="mission" class="py-24 px-6 bg-white dark:bg-slate-800 relative">
-        <div class="absolute top-20 left-10 w-64 h-64 bg-sage-50 dark:bg-sage-900/20 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-16 reveal">
-            <span class="text-earth-gold font-bold tracking-widest text-xs uppercase mb-2 block">Who We Are</span>
-            <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300">Restoring Hope, Rebuilding Lives</h2>
-          </div>
-
-          <div class="grid lg:grid-cols-12 gap-8">
-            <!-- Mission Card -->
-            <div class="lg:col-span-4 flex reveal reveal-delay-100">
-              <div class="bg-cream-dark dark:bg-slate-700 p-8 rounded-3xl h-full border border-sage-100 dark:border-slate-600 transition-transform hover:-translate-y-2 duration-500 w-full">
-                <div class="w-12 h-12 bg-white dark:bg-slate-600 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-sage-700 dark:text-sage-300">
-                  <i data-lucide="target" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-2xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-4">Our Mission</h3>
-                <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-                  To restore hope and rebuild lives in post-war and crisis-affected communities in Africa, starting with Tigray, Ethiopia. We focus on healing and holistic recovery.
-                </p>
-              </div>
-            </div>
-
-            <!-- Vision Card -->
-            <div class="lg:col-span-4 flex reveal reveal-delay-200">
-              <div class="bg-sage-50 dark:bg-sage-900/30 p-8 rounded-3xl h-full border border-sage-100 dark:border-slate-600 transition-transform hover:-translate-y-2 duration-500 w-full">
-                <div class="w-12 h-12 bg-white dark:bg-slate-600 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-sage-700 dark:text-sage-300">
-                  <i data-lucide="lightbulb" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-2xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-4">Our Vision</h3>
-                <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-                  To turn post-conflict communities into resilient, self-sustaining centers of prosperity where every individual has the opportunity to thrive with dignity.
-                </p>
-              </div>
-            </div>
-
-            <!-- Founder Card -->
-            <div class="lg:col-span-4 flex reveal reveal-delay-300">
-              <div class="bg-sage-500 p-8 rounded-3xl h-full text-white relative overflow-hidden group w-full">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-sage-400/30 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700 ease-in-out"></div>
-                
-                <div class="relative z-10">
-                  <div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 text-earth-gold">
-                    <i data-lucide="user-check" class="w-6 h-6"></i>
-                  </div>
-                  <h3 class="text-2xl font-serif font-bold mb-2">Our Origin</h3>
-                  <div class="h-px w-12 bg-earth-gold mb-4"></div>
-                  <p class="text-sage-100 leading-relaxed mb-4">
-                    Founded in Roseville, CA by <strong class="text-white">Dr. Fetien Abay Abera</strong>, an Ethiopian professor and humanitarian dedicated to transformative change.
-                  </p>
+                  <div class="font-bold">Dr. Fetien Abay Abera</div>
+                  <div class="text-sage-200 text-sm">Founder & CEO, TOWAF</div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- Values Strip -->
-          <div class="mt-16 pt-10 border-t border-sage-100 dark:border-slate-700">
-             <div class="flex flex-wrap justify-center gap-4 md:gap-12">
-               <div class="reveal reveal-delay-100 flex items-center gap-2 text-sage-700 dark:text-sage-300 font-medium opacity-70 hover:opacity-100 transition-opacity">
-                 <i data-lucide="heart" class="w-4 h-4 text-earth-gold fill-current"></i> <span>Peace</span>
-               </div>
-               <div class="reveal reveal-delay-200 flex items-center gap-2 text-sage-700 dark:text-sage-300 font-medium opacity-70 hover:opacity-100 transition-opacity">
-                 <i data-lucide="heart" class="w-4 h-4 text-earth-gold fill-current"></i> <span>Hope</span>
-               </div>
-               <div class="reveal reveal-delay-300 flex items-center gap-2 text-sage-700 dark:text-sage-300 font-medium opacity-70 hover:opacity-100 transition-opacity">
-                 <i data-lucide="heart" class="w-4 h-4 text-earth-gold fill-current"></i> <span>Dignity</span>
-               </div>
-               <div class="reveal reveal-delay-400 flex items-center gap-2 text-sage-700 dark:text-sage-300 font-medium opacity-70 hover:opacity-100 transition-opacity">
-                 <i data-lucide="heart" class="w-4 h-4 text-earth-gold fill-current"></i> <span>Development</span>
-               </div>
-               <div class="reveal reveal-delay-500 flex items-center gap-2 text-sage-700 dark:text-sage-300 font-medium opacity-70 hover:opacity-100 transition-opacity">
-                 <i data-lucide="heart" class="w-4 h-4 text-earth-gold fill-current"></i> <span>Inclusion</span>
-               </div>
-             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section Divider -->
-      <div class="section-divider"></div>
-
-      <!-- Programs Section -->
-      <section id="programs" class="py-24 px-6 bg-gradient-to-b from-white to-sage-50 dark:from-slate-800 dark:to-slate-900">
-        <div class="max-w-7xl mx-auto">
-          <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div class="reveal">
-              <span class="text-sage-500 font-bold tracking-widest text-xs uppercase mb-2 block">What We Do</span>
-              <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300">Core Focus Areas</h2>
-            </div>
-            <p class="reveal reveal-delay-100 max-w-md text-slate-600 dark:text-slate-400 pb-2">
-              Our holistic approach covers immediate relief to long-term sustainable development across six key departments.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <!-- Program 1 -->
-            <div class="reveal reveal-delay-100 group relative bg-white dark:bg-slate-800 rounded-2xl p-6 h-full border border-transparent hover:border-sage-200 dark:hover:border-sage-500 transition-all duration-300 hover:shadow-xl hover:shadow-sage-900/5 parallax-card hover:scale-105">
-              <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                <i data-lucide="arrow-up-right" class="w-6 h-6 text-earth-gold"></i>
-              </div>
-              
-              <div class="w-14 h-14 bg-sage-50 dark:bg-sage-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-500 transition-colors duration-300">
-                <i data-lucide="heart-handshake" class="w-6 h-6 text-sage-700 dark:text-sage-300 group-hover:text-white transition-colors duration-300"></i>
-              </div>
-
-              <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-3">Survivor Support</h3>
-              <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Holistic aid for women affected by conflict, providing housing, business grants, and psychosocial care to rebuild dignity.
-              </p>
-              
-              <div class="w-0 group-hover:w-full h-1 bg-gradient-to-r from-earth-gold to-sage-500 transition-all duration-500 rounded-full mt-auto absolute bottom-0 left-0"></div>
-            </div>
-
-            <!-- Program 2 -->
-            <div class="reveal reveal-delay-200 group relative bg-white dark:bg-slate-800 rounded-2xl p-6 h-full border border-transparent hover:border-sage-200 dark:hover:border-sage-500 transition-all duration-300 hover:shadow-xl hover:shadow-sage-900/5 parallax-card hover:scale-105">
-              <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                <i data-lucide="arrow-up-right" class="w-6 h-6 text-earth-gold"></i>
-              </div>
-              
-              <div class="w-14 h-14 bg-sage-50 dark:bg-sage-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-500 transition-colors duration-300">
-                <i data-lucide="graduation-cap" class="w-6 h-6 text-sage-700 dark:text-sage-300 group-hover:text-white transition-colors duration-300"></i>
-              </div>
-
-              <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-3">Education & R4R</h3>
-              <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Refugee for Refugee initiative helping displaced scholars and students continue their education through scholarships and SAT support.
-              </p>
-              <div class="w-0 group-hover:w-full h-1 bg-gradient-to-r from-earth-gold to-sage-500 transition-all duration-500 rounded-full mt-auto absolute bottom-0 left-0"></div>
-            </div>
-
-            <!-- Program 3 -->
-            <div class="reveal reveal-delay-300 group relative bg-white dark:bg-slate-800 rounded-2xl p-6 h-full border border-transparent hover:border-sage-200 dark:hover:border-sage-500 transition-all duration-300 hover:shadow-xl hover:shadow-sage-900/5 parallax-card hover:scale-105">
-              <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                <i data-lucide="arrow-up-right" class="w-6 h-6 text-earth-gold"></i>
-              </div>
-              
-              <div class="w-14 h-14 bg-sage-50 dark:bg-sage-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-500 transition-colors duration-300">
-                <i data-lucide="sprout" class="w-6 h-6 text-sage-700 dark:text-sage-300 group-hover:text-white transition-colors duration-300"></i>
-              </div>
-
-              <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-3">Capacity Building</h3>
-              <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Vocational training and leadership development to foster self-sustaining communities and economic independence.
-              </p>
-              <div class="w-0 group-hover:w-full h-1 bg-gradient-to-r from-earth-gold to-sage-500 transition-all duration-500 rounded-full mt-auto absolute bottom-0 left-0"></div>
-            </div>
-
-            <!-- Program 4 -->
-            <div class="reveal reveal-delay-400 group relative bg-white dark:bg-slate-800 rounded-2xl p-6 h-full border border-transparent hover:border-sage-200 dark:hover:border-sage-500 transition-all duration-300 hover:shadow-xl hover:shadow-sage-900/5 parallax-card hover:scale-105">
-              <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                <i data-lucide="arrow-up-right" class="w-6 h-6 text-earth-gold"></i>
-              </div>
-              
-              <div class="w-14 h-14 bg-sage-50 dark:bg-sage-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-500 transition-colors duration-300">
-                <i data-lucide="wifi" class="w-6 h-6 text-sage-700 dark:text-sage-300 group-hover:text-white transition-colors duration-300"></i>
-              </div>
-
-              <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-3">Tech Infrastructure</h3>
-              <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Bridging the digital divide by donating computers and strengthening exam infrastructure for students in need.
-              </p>
-              <div class="w-0 group-hover:w-full h-1 bg-gradient-to-r from-earth-gold to-sage-500 transition-all duration-500 rounded-full mt-auto absolute bottom-0 left-0"></div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Section Divider -->
-      <div class="section-divider"></div>
-
-      <!-- Impact Section -->
-      <section id="impact" class="py-24 px-6 bg-sage-100 dark:bg-slate-800 relative overflow-hidden text-sage-900 dark:text-slate-200">
-        <!-- Decorative Circles -->
-        <div class="absolute top-0 right-0 w-[600px] h-[600px] border border-sage-200 dark:border-sage-700 rounded-full translate-x-1/3 -translate-y-1/3 opacity-30"></div>
-        <div class="absolute top-0 right-0 w-[400px] h-[400px] border border-sage-200 dark:border-sage-700 rounded-full translate-x-1/3 -translate-y-1/3 opacity-30"></div>
-        
-        <div class="max-w-7xl mx-auto relative z-10">
-          <div class="text-center max-w-2xl mx-auto mb-20 reveal">
-            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6 text-sage-700 dark:text-sage-300">Our Impact in Numbers</h2>
-            <p class="text-sage-600 dark:text-sage-400 text-lg">
-              Since formalizing as a 501(c)(3) in 2024-2025, we have made tangible strides in restoring dignity and hope.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            
-            <div class="text-center group reveal reveal-delay-100">
-              <div class="impact-card bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center items-center cursor-pointer parallax-card">
-                <div class="text-5xl lg:text-6xl font-serif font-bold text-earth-gold mb-3 transition-transform duration-300" id="count-1">
-                  0
-                </div>
-                <div class="h-px w-12 bg-sage-300 dark:bg-sage-600 mx-auto mb-4"></div>
-                <h4 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">Students Mentored</h4>
-                <p class="text-sage-600 dark:text-sage-400 text-sm">Guiding the next generation</p>
-                <div class="impact-details mt-4 text-sm text-sage-600 dark:text-sage-400 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20">
-                  Through our S2S mentorship program, we've provided personalized guidance to help students achieve academic success.
-                </div>
-              </div>
-            </div>
-
-            <div class="text-center group reveal reveal-delay-200">
-              <div class="impact-card bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center items-center cursor-pointer parallax-card">
-                <div class="text-5xl lg:text-6xl font-serif font-bold text-earth-gold mb-3 transition-transform duration-300" id="count-2">
-                  0
-                </div>
-                <div class="h-px w-12 bg-sage-300 dark:bg-sage-600 mx-auto mb-4"></div>
-                <h4 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">SAT Fees Covered</h4>
-                <p class="text-sage-600 dark:text-sage-400 text-sm">Opening global doors</p>
-                <div class="impact-details mt-4 text-sm text-sage-600 dark:text-sage-400 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20">
-                  Removing financial barriers to higher education by covering exam costs for deserving students.
-                </div>
-              </div>
-            </div>
-
-            <div class="text-center group reveal reveal-delay-300">
-              <div class="impact-card bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center items-center cursor-pointer parallax-card">
-                <div class="text-5xl lg:text-6xl font-serif font-bold text-earth-gold mb-3 transition-transform duration-300" id="count-3">
-                  0
-                </div>
-                <div class="h-px w-12 bg-sage-300 dark:bg-sage-600 mx-auto mb-4"></div>
-                <h4 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">Computers Donated</h4>
-                <p class="text-sage-600 dark:text-sage-400 text-sm">Digital access for all</p>
-                <div class="impact-details mt-4 text-sm text-sage-600 dark:text-sage-400 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20">
-                  Bridging the digital divide by providing essential technology to schools and community centers.
-                </div>
-              </div>
-            </div>
-
-            <div class="text-center group reveal reveal-delay-400">
-              <div class="impact-card bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center items-center cursor-pointer parallax-card">
-                <div class="text-5xl lg:text-6xl font-serif font-bold text-earth-gold mb-3 transition-transform duration-300" id="count-4">
-                  0
-                </div>
-                <div class="h-px w-12 bg-sage-300 dark:bg-sage-600 mx-auto mb-4"></div>
-                <h4 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">Global Scholarships</h4>
-                <p class="text-sage-600 dark:text-sage-400 text-sm">International excellence</p>
-                <div class="impact-details mt-4 text-sm text-sage-600 dark:text-sage-400 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20">
-                  Helping talented students secure prestigious international scholarships for advanced studies.
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Section Divider -->
-      <div class="section-divider"></div>
-
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="py-24 px-6 bg-sage-50 dark:bg-slate-900">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-16 reveal">
-            <span class="text-earth-gold font-bold tracking-widest text-xs uppercase mb-2 block">Voices of Hope</span>
-            <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300">Inspiring Stories</h2>
-          </div>
-
-          <div class="relative max-w-4xl mx-auto">
-            <div class="testimonial-carousel overflow-hidden rounded-2xl shadow-xl">
-              <div class="testimonial-slides flex transition-transform duration-500 ease-in-out">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-slide min-w-full bg-white dark:bg-slate-800 p-8 md:p-12">
-                  <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                      <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=200&auto=format&fit=crop" alt="Testimonial author" class="w-full h-full object-cover" loading="lazy" />
-                    </div>
-                    <div class="text-center md:text-left">
-                      <i data-lucide="quote" class="w-8 h-8 text-sage-300 mb-4 mx-auto md:mx-0"></i>
-                      <p class="text-lg text-slate-600 dark:text-slate-400 italic mb-4">
-                        "TOWAF's mentorship program changed my life. After losing everything in the conflict, they helped me secure a scholarship to continue my education. I'm now studying medicine to help others in my community."
-                      </p>
-                      <div class="font-serif font-bold text-sage-700 dark:text-sage-300">Amina K.</div>
-                      <div class="text-sm text-sage-500">Scholarship Recipient</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-slide min-w-full bg-white dark:bg-slate-800 p-8 md:p-12">
-                  <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Testimonial author" class="w-full h-full object-cover" loading="lazy" />
-                    </div>
-                    <div class="text-center md:text-left">
-                      <i data-lucide="quote" class="w-8 h-8 text-sage-300 mb-4 mx-auto md:mx-0"></i>
-                      <p class="text-lg text-slate-600 dark:text-slate-400 italic mb-4">
-                        "The business grant from TOWAF allowed me to start a small poultry farm. Now I can provide for my family and even employ two other women from my village. This organization truly rebuilds lives."
-                      </p>
-                      <div class="font-serif font-bold text-sage-700 dark:text-sage-300">Fatima M.</div>
-                      <div class="text-sm text-sage-500">Women's Empowerment Beneficiary</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-slide min-w-full bg-white dark:bg-slate-800 p-8 md:p-12">
-                  <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" alt="Testimonial author" class="w-full h-full object-cover" loading="lazy" />
-                    </div>
-                    <div class="text-center md:text-left">
-                      <i data-lucide="quote" class="w-8 h-8 text-sage-300 mb-4 mx-auto md:mx-0"></i>
-                      <p class="text-lg text-slate-600 dark:text-slate-400 italic mb-4">
-                        "As a volunteer with TOWAF, I've witnessed firsthand how education can transform communities. The R4R program is especially close to my heart - helping refugee students continue their studies against all odds."
-                      </p>
-                      <div class="font-serif font-bold text-sage-700 dark:text-sage-300">David L.</div>
-                      <div class="text-sm text-sage-500">Volunteer & Mentor</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Carousel Controls -->
-            <button class="testimonial-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-slate-700 p-2 rounded-full shadow-lg text-sage-700 dark:text-sage-300 hover:bg-sage-50 dark:hover:bg-slate-600 transition-colors">
-              <i data-lucide="chevron-left" class="w-5 h-5"></i>
-            </button>
-            <button class="testimonial-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-slate-700 p-2 rounded-full shadow-lg text-sage-700 dark:text-sage-300 hover:bg-sage-50 dark:hover:bg-slate-600 transition-colors">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </button>
-
-            <!-- Carousel Indicators -->
-            <div class="flex justify-center mt-6 space-x-2">
-              <button class="testimonial-indicator w-3 h-3 rounded-full bg-sage-300 dark:bg-sage-600 transition-all duration-300 indicator-active"></button>
-              <button class="testimonial-indicator w-3 h-3 rounded-full bg-sage-300 dark:bg-sage-600 transition-all duration-300"></button>
-              <button class="testimonial-indicator w-3 h-3 rounded-full bg-sage-300 dark:bg-sage-600 transition-all duration-300"></button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section Divider -->
-      <div class="section-divider"></div>
-
-      <!-- CTA Section -->
-      <section id="donate" class="py-20 px-6 bg-gradient-to-br from-sage-100 to-sage-200 dark:from-sage-800 dark:to-sage-900">
-        <div class="max-w-4xl mx-auto text-center">
-          <div class="reveal">
-            <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-6">Join Our Mission Today</h2>
-            <p class="text-lg text-sage-600 dark:text-sage-400 mb-8 max-w-2xl mx-auto">
-              Your support can help us restore hope and rebuild lives in post-conflict communities across Africa. Together, we can create lasting change.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-              <button class="px-8 py-4 bg-earth-gold text-white font-medium rounded-full hover:bg-yellow-600 transition-all hover:scale-105 shadow-lg shadow-earth-gold/30 flex items-center gap-2 animate-pulse-glow">
-                <i data-lucide="heart" class="w-5 h-5"></i>
-                Donate Now
-              </button>
-              <button class="px-8 py-4 bg-white dark:bg-slate-800 text-sage-700 dark:text-sage-300 border border-sage-200 dark:border-slate-700 rounded-full font-medium transition-all hover:border-sage-300 dark:hover:border-sage-500 hover:bg-sage-50 dark:hover:bg-slate-700 flex items-center gap-2">
-                <i data-lucide="users" class="w-5 h-5"></i>
-                Volunteer
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-sage-200 dark:bg-slate-800 text-sage-800 dark:text-sage-300 pt-16 pb-10 px-6 border-t border-sage-300 dark:border-slate-700">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <!-- Brand -->
-          <div class="lg:col-span-1">
-            <div class="flex items-center gap-2 mb-6 text-sage-700 dark:text-sage-300">
-              <i data-lucide="heart" class="w-6 h-6 text-earth-gold fill-current"></i>
-              <span class="text-xl font-serif font-bold tracking-wide">TOWAF</span>
-            </div>
-            <p class="text-sage-600 dark:text-sage-400 text-sm leading-relaxed mb-6">
-              Restoring hope and rebuilding lives in post-war and crisis-affected communities.
-            </p>
-            <div class="inline-block border border-sage-300 dark:border-sage-600 rounded px-3 py-1 text-xs text-sage-500 dark:text-sage-400">
-              501(c)(3) Non-Profit
-            </div>
-          </div>
-
-          <!-- Quick Links -->
-          <div>
-            <h4 class="text-sage-700 dark:text-sage-300 font-bold mb-6">Quick Links</h4>
-            <ul class="space-y-4">
-              <li><a href="#home" class="text-sage-600 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Home</a></li>
-              <li><a href="#mission" class="text-sage-600 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Mission</a></li>
-              <li><a href="#programs" class="text-sage-600 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Programs</a></li>
-              <li><a href="#impact" class="text-sage-600 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Impact</a></li>
-              <li><a href="#testimonials" class="text-sage-600 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Testimonials</a></li>
-            </ul>
-          </div>
-
-          <!-- Contact -->
-          <div>
-            <h4 class="text-sage-700 dark:text-sage-300 font-bold mb-6">Contact Us</h4>
-            <ul class="space-y-4">
-              <li class="flex items-start gap-3 text-sage-600 dark:text-sage-400 text-sm">
-                <i data-lucide="map-pin" class="w-4 h-4 text-earth-gold mt-1"></i>
-                <span>Roseville, California,<br />USA</span>
-              </li>
-              <li class="flex items-center gap-3 text-sage-600 dark:text-sage-400 text-sm">
-                <i data-lucide="mail" class="w-4 h-4 text-earth-gold"></i>
-                <a href="mailto:info@towaf.org" class="hover:text-sage-700 dark:hover:text-sage-300 transition-colors">info@towaf.org</a>
-              </li>
-              <li class="flex items-center gap-3 text-sage-600 dark:text-sage-400 text-sm">
-                <i data-lucide="globe" class="w-4 h-4 text-earth-gold"></i>
-                <a href="#" class="hover:text-sage-700 dark:hover:text-sage-300 transition-colors">www.towaf.org</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Newsletter -->
-          <div>
-            <h4 class="text-sage-700 dark:text-sage-300 font-bold mb-6">Stay Connected</h4>
-            <p class="text-sage-600 dark:text-sage-400 text-sm mb-4">Join our community and help us rebuild lives.</p>
-            <form class="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                class="bg-white dark:bg-slate-700 border border-sage-300 dark:border-slate-600 rounded px-4 py-2 text-sm text-sage-700 dark:text-sage-300 w-full focus:outline-none focus:border-earth-gold transition-colors"
-                aria-label="Your email address"
-              />
-              <button class="bg-earth-gold text-white px-4 py-2 rounded text-sm font-bold hover:bg-yellow-600 transition-colors" aria-label="Subscribe to newsletter">
-                Join
-              </button>
-            </form>
-            <div class="flex gap-4 mt-6">
-              <a href="#" class="text-sage-600 dark:text-sage-400 hover:text-earth-gold transition-colors" aria-label="Facebook">
-                <i data-lucide="facebook" class="w-5 h-5"></i>
-              </a>
-              <a href="#" class="text-sage-600 dark:text-sage-400 hover:text-earth-gold transition-colors" aria-label="Twitter">
-                <i data-lucide="twitter" class="w-5 h-5"></i>
-              </a>
-              <a href="#" class="text-sage-600 dark:text-sage-400 hover:text-earth-gold transition-colors" aria-label="Instagram">
-                <i data-lucide="instagram" class="w-5 h-5"></i>
-              </a>
-              <a href="#" class="text-sage-600 dark:text-sage-400 hover:text-earth-gold transition-colors" aria-label="LinkedIn">
-                <i data-lucide="linkedin" class="w-5 h-5"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="border-t border-sage-300 dark:border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-sage-500 dark:text-sage-500 text-xs">
-            &copy; 2025 Together With Africa. All rights reserved.
-          </p>
-          <div class="flex gap-6 text-xs text-sage-500 dark:text-sage-500">
-            <a href="#" class="hover:text-sage-700 dark:hover:text-sage-300">Privacy Policy</a>
-            <a href="#" class="hover:text-sage-700 dark:hover:text-sage-300">Terms of Service</a>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <!-- Scripts -->
-    <script>
-      // Initialize Lucide Icons
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Our Story Section -->
+    <section id="story" class="py-24 px-6 bg-cream-dark dark:bg-slate-800 relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4A373_1px,transparent_1px)] [background-size:20px_20px]">
+        </div>
+      </div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-16 reveal">
+          <span class="text-earth-gold font-bold tracking-widest text-xs uppercase mb-2 block">Our Journey</span>
+          <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300">The TOWAF Story</h2>
+        </div>
+
+        <!-- Story Timeline -->
+        <div class="max-w-4xl mx-auto">
+          <!-- Timeline Item 1 -->
+          <div class="flex flex-col md:flex-row gap-8 mb-12 reveal">
+            <div class="md:w-1/3 text-right">
+              <div class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg border-l-4 border-earth-gold">
+                <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">The Catalyst</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                  During the 2021 Tigray war, Dr. Fetien led Mekelle University through siege conditions, coordinating
+                  food aid and ensuring student safety.
+                </p>
+              </div>
+            </div>
+            <div class="hidden md:flex items-center justify-center relative">
+              <div class="w-4 h-4 bg-earth-gold rounded-full"></div>
+              <div class="absolute w-1 h-full bg-earth-gold/30 -z-10"></div>
+            </div>
+            <div class="md:w-1/3">
+              <div class="h-full flex items-center">
+                <div class="w-16 h-16 bg-earth-gold/20 rounded-full flex items-center justify-center text-earth-gold">
+                  <i data-lucide="shield-alert" class="w-8 h-8"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="flex flex-col md:flex-row gap-8 mb-12 reveal reveal-delay-100">
+            <div class="md:w-1/3">
+              <div class="h-full flex items-center justify-end">
+                <div class="w-16 h-16 bg-earth-gold/20 rounded-full flex items-center justify-center text-earth-gold">
+                  <i data-lucide="users" class="w-8 h-8"></i>
+                </div>
+              </div>
+            </div>
+            <div class="hidden md:flex items-center justify-center relative">
+              <div class="w-4 h-4 bg-earth-gold rounded-full"></div>
+              <div class="absolute w-1 h-full bg-earth-gold/30 -z-10"></div>
+            </div>
+            <div class="md:w-1/3 text-left">
+              <div class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg border-r-4 border-earth-gold">
+                <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">Refugee for Refugee</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                  Witnessing refugee trauma in Sudan inspired the R4R initiative, supporting PhD students and refugees
+                  through education and technology.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="flex flex-col md:flex-row gap-8 mb-12 reveal reveal-delay-200">
+            <div class="md:w-1/3 text-right">
+              <div class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg border-l-4 border-earth-gold">
+                <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">Mentorship & Education</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                  Student feedback: "You helped us as a torch in bringing light during our darkest time" became the
+                  driving force for the foundation.
+                </p>
+              </div>
+            </div>
+            <div class="hidden md:flex items-center justify-center relative">
+              <div class="w-4 h-4 bg-earth-gold rounded-full"></div>
+              <div class="absolute w-1 h-full bg-earth-gold/30 -z-10"></div>
+            </div>
+            <div class="md:w-1/3">
+              <div class="h-full flex items-center">
+                <div class="w-16 h-16 bg-earth-gold/20 rounded-full flex items-center justify-center text-earth-gold">
+                  <i data-lucide="graduation-cap" class="w-8 h-8"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="flex flex-col md:flex-row gap-8 reveal reveal-delay-300">
+            <div class="md:w-1/3">
+              <div class="h-full flex items-center justify-end">
+                <div class="w-16 h-16 bg-earth-gold/20 rounded-full flex items-center justify-center text-earth-gold">
+                  <i data-lucide="heart" class="w-8 h-8"></i>
+                </div>
+              </div>
+            </div>
+            <div class="hidden md:flex items-center justify-center relative">
+              <div class="w-4 h-4 bg-earth-gold rounded-full"></div>
+            </div>
+            <div class="md:w-1/3 text-left">
+              <div class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg border-r-4 border-earth-gold">
+                <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">Formalization</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                  TOWAF established as a registered 501(c)(3) nonprofit in California, dedicated to education and
+                  empowerment across Africa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-24 px-6 bg-cream dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div class="reveal">
+            <span class="text-sage-500 font-bold tracking-widest text-xs uppercase mb-2 block">What We Do</span>
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300">Core Focus Areas</h2>
+          </div>
+          <p class="reveal reveal-delay-100 max-w-md text-slate-700 dark:text-slate-400 pb-2">
+            Our holistic approach covers immediate relief to long-term sustainable development across six key
+            departments.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Program 1 -->
+          <div
+            class="reveal reveal-delay-100 group relative bg-white dark:bg-slate-800 rounded-2xl p-6 h-full border border-transparent hover:border-sage-200 dark:hover:border-sage-500 transition-all duration-300 hover:shadow-xl hover:shadow-sage-900/5 parallax-card shadow-lg">
+            <div
+              class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1">
+              <i data-lucide="arrow-up-right" class="w-6 h-6 text-earth-gold"></i>
+            </div>
+
+            <div
+              class="w-14 h-14 bg-sage-50 dark:bg-sage-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-500 transition-colors duration-300">
+              <i data-lucide="heart-handshake"
+                class="w-6 h-6 text-sage-700 dark:text-sage-300 group-hover:text-white transition-colors duration-300"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-3">Survivor Support</h3>
+            <p class="text-slate-700 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Holistic aid for women affected by conflict, providing housing, business grants, and psychosocial care to
+              rebuild dignity.
+            </p>
+
+            <div
+              class="w-0 group-hover:w-full h-1 bg-gradient-to-r from-earth-gold to-sage-500 transition-all duration-500 rounded-full mt-auto absolute bottom-0 left-0">
+            </div>
+          </div>
+
+          <!-- Program 2 -->
+          <div
+            class="reveal reveal-delay-200 group relative bg-white dark:bg-slate-800 rounded-2xl p-6 h-full border border-transparent hover:border-sage-200 dark:hover:border-sage-500 transition-all duration-300 hover:shadow-xl hover:shadow-sage-900/5 parallax-card shadow-lg">
+            <div
+              class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1">
+              <i data-lucide="arrow-up-right" class="w-6 h-6 text-earth-gold"></i>
+            </div>
+
+            <div
+              class="w-14 h-14 bg-sage-50 dark:bg-sage-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-500 transition-colors duration-300">
+              <i data-lucide="graduation-cap"
+                class="w-6 h-6 text-sage-700 dark:text-sage-300 group-hover:text-white transition-colors duration-300"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-3">Education & R4R</h3>
+            <p class="text-slate-700 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Refugee for Refugee initiative helping displaced scholars and students continue their education through
+              scholarships and SAT support.
+            </p>
+            <div
+              class="w-0 group-hover:w-full h-1 bg-gradient-to-r from-earth-gold to-sage-500 transition-all duration-500 rounded-full mt-auto absolute bottom-0 left-0">
+            </div>
+          </div>
+
+          <!-- Program 3 -->
+          <div
+            class="reveal reveal-delay-300 group relative bg-white dark:bg-slate-800 rounded-2xl p-6 h-full border border-transparent hover:border-sage-200 dark:hover:border-sage-500 transition-all duration-300 hover:shadow-xl hover:shadow-sage-900/5 parallax-card shadow-lg">
+            <div
+              class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1">
+              <i data-lucide="arrow-up-right" class="w-6 h-6 text-earth-gold"></i>
+            </div>
+
+            <div
+              class="w-14 h-14 bg-sage-50 dark:bg-sage-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-500 transition-colors duration-300">
+              <i data-lucide="sprout"
+                class="w-6 h-6 text-sage-700 dark:text-sage-300 group-hover:text-white transition-colors duration-300"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-3">Capacity Building</h3>
+            <p class="text-slate-700 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Vocational training and leadership development to foster self-sustaining communities and economic
+              independence.
+            </p>
+            <div
+              class="w-0 group-hover:w-full h-1 bg-gradient-to-r from-earth-gold to-sage-500 transition-all duration-500 rounded-full mt-auto absolute bottom-0 left-0">
+            </div>
+          </div>
+
+          <!-- Program 4 -->
+          <div
+            class="reveal reveal-delay-400 group relative bg-white dark:bg-slate-800 rounded-2xl p-6 h-full border border-transparent hover:border-sage-200 dark:hover:border-sage-500 transition-all duration-300 hover:shadow-xl hover:shadow-sage-900/5 parallax-card shadow-lg">
+            <div
+              class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1">
+              <i data-lucide="arrow-up-right" class="w-6 h-6 text-earth-gold"></i>
+            </div>
+
+            <div
+              class="w-14 h-14 bg-sage-50 dark:bg-sage-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-500 transition-colors duration-300">
+              <i data-lucide="wifi"
+                class="w-6 h-6 text-sage-700 dark:text-sage-300 group-hover:text-white transition-colors duration-300"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-3">Tech Infrastructure</h3>
+            <p class="text-slate-700 dark:text-slate-400 text-sm leading-relaxed mb-4">
+              Bridging the digital divide by donating computers and strengthening exam infrastructure for students in
+              need.
+            </p>
+            <div
+              class="w-0 group-hover:w-full h-1 bg-gradient-to-r from-earth-gold to-sage-500 transition-all duration-500 rounded-full mt-auto absolute bottom-0 left-0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Governance Section -->
+    <section id="governance" class="py-24 px-6 bg-cream-dark dark:bg-slate-800 relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute top-10 right-10 w-64 h-64 bg-sage-100 rounded-full blur-3xl opacity-20 dark:bg-sage-900/30">
+      </div>
+      <div class="absolute bottom-10 left-10 w-48 h-48 bg-earth-gold/10 rounded-full blur-2xl opacity-20"></div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16 reveal">
+          <span class="text-earth-gold font-bold tracking-widest text-xs uppercase mb-2 block">Our Structure</span>
+          <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300">Governance &
+            Partnerships</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 mb-16">
+          <!-- Governance Structure -->
+          <div class="reveal">
+            <h3 class="text-2xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-6">Organizational Structure
+            </h3>
+
+            <div class="space-y-4">
+              <!-- Advisory Committee -->
+              <div
+                class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg border-l-4 border-sage-500 group hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-12 h-12 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sage-700 dark:text-sage-300">Advisory Committee</h4>
+                    <p class="text-sage-600 dark:text-sage-400 text-sm">Provides expert guidance</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Board of Directors -->
+              <div
+                class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg border-l-4 border-sage-600 group hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-12 h-12 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 group-hover:bg-sage-600 group-hover:text-white transition-colors duration-300">
+                    <i data-lucide="shield" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sage-700 dark:text-sage-300">Board of Directors</h4>
+                    <p class="text-sage-600 dark:text-sage-400 text-sm">Strategic oversight</p>
+                  </div>
+                </div>
+                <div class="pl-16 space-y-2">
+                  <div class="flex items-center gap-2 text-sm text-sage-700 dark:text-sage-300">
+                    <i data-lucide="user" class="w-4 h-4 text-earth-gold"></i>
+                    Dr. Fetien Abay Abera - CEO
+                  </div>
+                  <div class="flex items-center gap-2 text-sm text-sage-700 dark:text-sage-300">
+                    <i data-lucide="user" class="w-4 h-4 text-earth-gold"></i>
+                    Dr. Yohannes Woldegebriel - Treasurer
+                  </div>
+                  <div class="flex items-center gap-2 text-sm text-sage-700 dark:text-sage-300">
+                    <i data-lucide="user" class="w-4 h-4 text-earth-gold"></i>
+                    Dr. Margaret Khaitsa - Secretary
+                  </div>
+                </div>
+              </div>
+
+              <!-- Executive Committee -->
+              <div
+                class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg border-l-4 border-sage-700 group hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-12 h-12 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 group-hover:bg-sage-700 group-hover:text-white transition-colors duration-300">
+                    <i data-lucide="settings" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sage-700 dark:text-sage-300">Executive Committee</h4>
+                    <p class="text-sage-600 dark:text-sage-400 text-sm">Day-to-day operations</p>
+                  </div>
+                </div>
+                <div class="pl-16">
+                  <p class="text-sm text-sage-700 dark:text-sage-300">Manages six departments: Programs, Resource
+                    Mobilization, Finance, Legal, HR, Communications</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partnership Framework -->
+          <div class="reveal reveal-delay-100">
+            <h3 class="text-2xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-6">Partnership Framework</h3>
+            <p class="text-slate-700 dark:text-slate-400 mb-6">
+              TOWAF operates through six strategic pillars of collaboration to maximize impact and ensure sustainable
+              development.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Partnership Pillar 1 -->
+              <div
+                class="bg-white dark:bg-slate-700 p-4 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
+                <div
+                  class="w-10 h-10 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mx-auto mb-2 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                  <i data-lucide="globe" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-sage-700 dark:text-sage-300 text-sm mb-1">Development Partners</h4>
+                <p class="text-sage-600 dark:text-sage-400 text-xs">UN agencies, bilateral donors</p>
+              </div>
+
+              <!-- Partnership Pillar 2 -->
+              <div
+                class="bg-white dark:bg-slate-700 p-4 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
+                <div
+                  class="w-10 h-10 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mx-auto mb-2 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                  <i data-lucide="building" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-sage-700 dark:text-sage-300 text-sm mb-1">Government Entities</h4>
+                <p class="text-sage-600 dark:text-sage-400 text-xs">Policy alignment</p>
+              </div>
+
+              <!-- Partnership Pillar 3 -->
+              <div
+                class="bg-white dark:bg-slate-700 p-4 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
+                <div
+                  class="w-10 h-10 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mx-auto mb-2 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                  <i data-lucide="heart" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-sage-700 dark:text-sage-300 text-sm mb-1">NGOs</h4>
+                <p class="text-sage-600 dark:text-sage-400 text-xs">Humanitarian response</p>
+              </div>
+
+              <!-- Partnership Pillar 4 -->
+              <div
+                class="bg-white dark:bg-slate-700 p-4 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
+                <div
+                  class="w-10 h-10 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mx-auto mb-2 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                  <i data-lucide="users" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-sage-700 dark:text-sage-300 text-sm mb-1">TOWAF Affiliates</h4>
+                <p class="text-sage-600 dark:text-sage-400 text-xs">Knowledge sharing</p>
+              </div>
+
+              <!-- Partnership Pillar 5 -->
+              <div
+                class="bg-white dark:bg-slate-700 p-4 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
+                <div
+                  class="w-10 h-10 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mx-auto mb-2 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                  <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-sage-700 dark:text-sage-300 text-sm mb-1">Educational Institutions</h4>
+                <p class="text-sage-600 dark:text-sage-400 text-xs">STEM mentorship</p>
+              </div>
+
+              <!-- Partnership Pillar 6 -->
+              <div
+                class="bg-white dark:bg-slate-700 p-4 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
+                <div
+                  class="w-10 h-10 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mx-auto mb-2 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                  <i data-lucide="home" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-sage-700 dark:text-sage-300 text-sm mb-1">Impacted Communities</h4>
+                <p class="text-sage-600 dark:text-sage-400 text-xs">Participatory planning</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Financial Allocation -->
+        <div class="bg-white dark:bg-slate-700 rounded-3xl p-8 shadow-lg reveal reveal-delay-200">
+          <h3 class="text-2xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-6 text-center">Financial
+            Allocation</h3>
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="space-y-4">
+                <div
+                  class="flex items-center justify-between p-4 bg-sage-50 dark:bg-sage-900/30 rounded-2xl group hover:bg-sage-100 dark:hover:bg-sage-800 transition-colors duration-300">
+                  <div class="flex items-center gap-3">
+                    <div class="w-4 h-4 bg-sage-500 rounded-full"></div>
+                    <span class="font-medium text-sage-700 dark:text-sage-300">Survivors Support Program</span>
+                  </div>
+                  <span class="font-bold text-sage-700 dark:text-sage-300">42%</span>
+                </div>
+                <div
+                  class="flex items-center justify-between p-4 bg-sage-50 dark:bg-sage-900/30 rounded-2xl group hover:bg-sage-100 dark:hover:bg-sage-800 transition-colors duration-300">
+                  <div class="flex items-center gap-3">
+                    <div class="w-4 h-4 bg-sage-400 rounded-full"></div>
+                    <span class="font-medium text-sage-700 dark:text-sage-300">Education & Capacity Development</span>
+                  </div>
+                  <span class="font-bold text-sage-700 dark:text-sage-300">36%</span>
+                </div>
+                <div
+                  class="flex items-center justify-between p-4 bg-sage-50 dark:bg-sage-900/30 rounded-2xl group hover:bg-sage-100 dark:hover:bg-sage-800 transition-colors duration-300">
+                  <div class="flex items-center gap-3">
+                    <div class="w-4 h-4 bg-earth-gold rounded-full"></div>
+                    <span class="font-medium text-sage-700 dark:text-sage-300">Technology & Infrastructure</span>
+                  </div>
+                  <span class="font-bold text-sage-700 dark:text-sage-300">15%</span>
+                </div>
+                <div
+                  class="flex items-center justify-between p-4 bg-sage-50 dark:bg-sage-900/30 rounded-2xl group hover:bg-sage-100 dark:hover:bg-sage-800 transition-colors duration-300">
+                  <div class="flex items-center gap-3">
+                    <div class="w-4 h-4 bg-amber-400 rounded-full"></div>
+                    <span class="font-medium text-sage-700 dark:text-sage-300">Refugee for Refugee Program</span>
+                  </div>
+                  <span class="font-bold text-sage-700 dark:text-sage-300">7%</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <div class="relative w-64 h-64">
+                <!-- Pie Chart Visualization -->
+                <div class="absolute inset-0 rounded-full border-[16px] border-sage-500"
+                  style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);"></div>
+                <div class="absolute inset-0 rounded-full border-[16px] border-sage-400"
+                  style="clip-path: polygon(50% 0, 100% 0, 100% 36%, 50% 36%);"></div>
+                <div class="absolute inset-0 rounded-full border-[16px] border-earth-gold"
+                  style="clip-path: polygon(100% 36%, 100% 51%, 50% 51%, 50% 36%);"></div>
+                <div class="absolute inset-0 rounded-full border-[16px] border-amber-400"
+                  style="clip-path: polygon(100% 51%, 100% 100%, 50% 100%, 50% 51%);"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-sage-700 dark:text-sage-300">TOWAF</div>
+                    <div class="text-sm text-sage-600 dark:text-sage-400">Target</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Impact Section -->
+    <section id="impact"
+      class="py-24 px-6 bg-cream dark:bg-slate-900 relative overflow-hidden text-sage-900 dark:text-slate-200">
+      <!-- Decorative Circles -->
+      <div
+        class="absolute top-0 right-0 w-[600px] h-[600px] border border-sage-200 dark:border-sage-700 rounded-full translate-x-1/3 -translate-y-1/3 opacity-30">
+      </div>
+      <div
+        class="absolute top-0 right-0 w-[400px] h-[400px] border border-sage-200 dark:border-sage-700 rounded-full translate-x-1/3 -translate-y-1/3 opacity-30">
+      </div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+          <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6 text-sage-700 dark:text-sage-300">Our Impact in
+            Numbers</h2>
+          <p class="text-sage-700 dark:text-sage-400 text-lg">
+            Since formalizing as a 501(c)(3) in 2024-2025, we have made tangible strides in restoring dignity and hope.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+
+          <div class="text-center group reveal reveal-delay-100">
+            <div
+              class="impact-card bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center items-center cursor-pointer parallax-card">
+              <div
+                class="text-5xl lg:text-6xl font-serif font-bold text-earth-gold mb-3 transition-transform duration-300"
+                id="count-1">
+                0
+              </div>
+              <div class="h-px w-12 bg-sage-300 dark:bg-sage-600 mx-auto mb-4"></div>
+              <h4 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">Students Mentored</h4>
+              <p class="text-sage-700 dark:text-sage-400 text-sm">Guiding the next generation</p>
+              <div
+                class="impact-details mt-4 text-sm text-sage-700 dark:text-sage-400 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20">
+                Through our S2S mentorship program, we've provided personalized guidance to help students achieve
+                academic success.
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center group reveal reveal-delay-200">
+            <div
+              class="impact-card bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center items-center cursor-pointer parallax-card">
+              <div
+                class="text-5xl lg:text-6xl font-serif font-bold text-earth-gold mb-3 transition-transform duration-300"
+                id="count-2">
+                0
+              </div>
+              <div class="h-px w-12 bg-sage-300 dark:bg-sage-600 mx-auto mb-4"></div>
+              <h4 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">SAT Fees Covered</h4>
+              <p class="text-sage-700 dark:text-sage-400 text-sm">Opening global doors</p>
+              <div
+                class="impact-details mt-4 text-sm text-sage-700 dark:text-sage-400 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20">
+                Removing financial barriers to higher education by covering exam costs for deserving students.
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center group reveal reveal-delay-300">
+            <div
+              class="impact-card bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center items-center cursor-pointer parallax-card">
+              <div
+                class="text-5xl lg:text-6xl font-serif font-bold text-earth-gold mb-3 transition-transform duration-300"
+                id="count-3">
+                0
+              </div>
+              <div class="h-px w-12 bg-sage-300 dark:bg-sage-600 mx-auto mb-4"></div>
+              <h4 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">Computers Donated</h4>
+              <p class="text-sage-700 dark:text-sage-400 text-sm">Digital access for all</p>
+              <div
+                class="impact-details mt-4 text-sm text-sage-700 dark:text-sage-400 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20">
+                Bridging the digital divide by providing essential technology to schools and community centers.
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center group reveal reveal-delay-400">
+            <div
+              class="impact-card bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-center items-center cursor-pointer parallax-card">
+              <div
+                class="text-5xl lg:text-6xl font-serif font-bold text-earth-gold mb-3 transition-transform duration-300"
+                id="count-4">
+                0
+              </div>
+              <div class="h-px w-12 bg-sage-300 dark:bg-sage-600 mx-auto mb-4"></div>
+              <h4 class="text-xl font-bold text-sage-700 dark:text-sage-300 mb-2">Global Scholarships</h4>
+              <p class="text-sage-700 dark:text-sage-400 text-sm">International excellence</p>
+              <div
+                class="impact-details mt-4 text-sm text-sage-700 dark:text-sage-400 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20">
+                Helping talented students secure prestigious international scholarships for advanced studies.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Major Achievements -->
+        <div class="mt-20 pt-12 border-t border-sage-200 dark:border-slate-700 reveal reveal-delay-500">
+          <div class="text-center mb-8">
+            <h3 class="text-3xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-4">Major Achievements
+              (2024-2025)</h3>
+            <div class="w-24 h-1 bg-earth-gold mx-auto rounded-full"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg group hover:scale-105 transition-transform duration-300">
+              <div
+                class="w-12 h-12 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mb-4 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                <i data-lucide="check-circle" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-sage-700 dark:text-sage-300 mb-2">Governance Established</h4>
+              <p class="text-sage-600 dark:text-sage-400 text-sm">Formalized TOWAF as a 501(c)(3) nonprofit with
+                complete governance structure</p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg group hover:scale-105 transition-transform duration-300">
+              <div
+                class="w-12 h-12 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mb-4 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                <i data-lucide="dollar-sign" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-sage-700 dark:text-sage-300 mb-2">Funding Secured</h4>
+              <p class="text-sage-600 dark:text-sage-400 text-sm">Secured $388,800 in grants from Hopewell Foundation
+                and other partners</p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg group hover:scale-105 transition-transform duration-300">
+              <div
+                class="w-12 h-12 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mb-4 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                <i data-lucide="users" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-sage-700 dark:text-sage-300 mb-2">S2S Program Launched</h4>
+              <p class="text-sage-600 dark:text-sage-400 text-sm">Student-to-Student mentorship with 17 mentees and 11
+                mentors</p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg group hover:scale-105 transition-transform duration-300">
+              <div
+                class="w-12 h-12 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mb-4 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                <i data-lucide="home" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-sage-700 dark:text-sage-300 mb-2">Housing Support</h4>
+              <p class="text-sage-600 dark:text-sage-400 text-sm">18 prefabricated housing units for safe accommodation
+                of survivors</p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg group hover:scale-105 transition-transform duration-300">
+              <div
+                class="w-12 h-12 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mb-4 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                <i data-lucide="laptop" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-sage-700 dark:text-sage-300 mb-2">Tech Infrastructure</h4>
+              <p class="text-sage-600 dark:text-sage-400 text-sm">155 computers donated to strengthen digital and
+                educational infrastructure</p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-slate-700 p-6 rounded-2xl shadow-lg group hover:scale-105 transition-transform duration-300">
+              <div
+                class="w-12 h-12 bg-sage-100 dark:bg-sage-900/50 rounded-full flex items-center justify-center text-sage-700 dark:text-sage-300 mb-4 group-hover:bg-sage-500 group-hover:text-white transition-colors duration-300">
+                <i data-lucide="handshake" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-sage-700 dark:text-sage-300 mb-2">Partnership Network</h4>
+              <p class="text-sage-600 dark:text-sage-400 text-sm">Built partnerships with universities, NGOs, private
+                sector, and local communities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 px-6 bg-cream-dark dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <span class="text-earth-gold font-bold tracking-widest text-xs uppercase mb-2 block">Voices of Hope</span>
+          <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300">Inspiring Stories</h2>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+          <div class="testimonial-carousel overflow-hidden rounded-2xl shadow-xl">
+            <div class="testimonial-slides flex transition-transform duration-500 ease-in-out">
+              <!-- Testimonial 1 -->
+              <div class="testimonial-slide min-w-full bg-white dark:bg-slate-700 p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                  <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=200&auto=format&fit=crop"
+                      alt="Testimonial author" class="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                  <div class="text-center md:text-left">
+                    <i data-lucide="quote" class="w-8 h-8 text-sage-300 mb-4 mx-auto md:mx-0"></i>
+                    <p class="text-lg text-slate-700 dark:text-slate-400 italic mb-4">
+                      "TOWAF's mentorship program changed my life. After losing everything in the conflict, they helped
+                      me secure a scholarship to continue my education. I'm now studying medicine to help others in my
+                      community."
+                    </p>
+                    <div class="font-serif font-bold text-sage-700 dark:text-sage-300">Amina K.</div>
+                    <div class="text-sm text-sage-500">Scholarship Recipient</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 2 -->
+              <div class="testimonial-slide min-w-full bg-white dark:bg-slate-700 p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                  <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+                      alt="Testimonial author" class="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                  <div class="text-center md:text-left">
+                    <i data-lucide="quote" class="w-8 h-8 text-sage-300 mb-4 mx-auto md:mx-0"></i>
+                    <p class="text-lg text-slate-700 dark:text-slate-400 italic mb-4">
+                      "The business grant from TOWAF allowed me to start a small poultry farm. Now I can provide for my
+                      family and even employ two other women from my village. This organization truly rebuilds lives."
+                    </p>
+                    <div class="font-serif font-bold text-sage-700 dark:text-sage-300">Fatima M.</div>
+                    <div class="text-sm text-sage-500">Women's Empowerment Beneficiary</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 3 -->
+              <div class="testimonial-slide min-w-full bg-white dark:bg-slate-700 p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                  <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                      alt="Testimonial author" class="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                  <div class="text-center md:text-left">
+                    <i data-lucide="quote" class="w-8 h-8 text-sage-300 mb-4 mx-auto md:mx-0"></i>
+                    <p class="text-lg text-slate-700 dark:text-slate-400 italic mb-4">
+                      "As a volunteer with TOWAF, I've witnessed firsthand how education can transform communities. The
+                      R4R program is especially close to my heart - helping refugee students continue their studies
+                      against all odds."
+                    </p>
+                    <div class="font-serif font-bold text-sage-700 dark:text-sage-300">David L.</div>
+                    <div class="text-sm text-sage-500">Volunteer & Mentor</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button
+            class="testimonial-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-slate-700 p-2 rounded-full shadow-lg text-sage-700 dark:text-sage-300 hover:bg-sage-50 dark:hover:bg-slate-600 transition-colors">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <button
+            class="testimonial-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-slate-700 p-2 rounded-full shadow-lg text-sage-700 dark:text-sage-300 hover:bg-sage-50 dark:hover:bg-slate-600 transition-colors">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+
+          <!-- Carousel Indicators -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <button
+              class="testimonial-indicator w-3 h-3 rounded-full bg-sage-300 dark:bg-sage-600 transition-all duration-300 indicator-active"></button>
+            <button
+              class="testimonial-indicator w-3 h-3 rounded-full bg-sage-300 dark:bg-sage-600 transition-all duration-300"></button>
+            <button
+              class="testimonial-indicator w-3 h-3 rounded-full bg-sage-300 dark:bg-sage-600 transition-all duration-300"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- CTA Section -->
+    <section id="donate"
+      class="py-20 px-6 bg-gradient-to-br from-sage-100 to-sage-200 dark:from-sage-800 dark:to-sage-900">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="reveal">
+          <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-700 dark:text-sage-300 mb-6">Join Our Mission
+            Today</h2>
+          <p class="text-lg text-sage-700 dark:text-sage-400 mb-8 max-w-2xl mx-auto">
+            Your support can help us restore hope and rebuild lives in post-conflict communities across Africa.
+            Together, we can create lasting change.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <button
+              class="px-8 py-4 bg-earth-gold text-white font-medium rounded-full hover:bg-yellow-600 transition-all hover:scale-105 shadow-lg shadow-earth-gold/30 flex items-center gap-2">
+              <i data-lucide="heart" class="w-5 h-5"></i>
+              Donate Now
+            </button>
+            <button
+              class="px-8 py-4 bg-white dark:bg-slate-800 text-sage-700 dark:text-sage-300 border border-sage-200 dark:border-slate-700 rounded-full font-medium transition-all hover:border-sage-300 dark:hover:border-sage-500 hover:bg-sage-50 dark:hover:bg-slate-700 flex items-center gap-2">
+              <i data-lucide="users" class="w-5 h-5"></i>
+              Volunteer
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact"
+    class="bg-cream-dark dark:bg-slate-800 text-sage-800 dark:text-sage-300 pt-16 pb-10 px-6 border-t border-sage-300 dark:border-slate-700">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-2 mb-6 text-sage-700 dark:text-sage-300">
+            <i data-lucide="heart" class="w-6 h-6 text-earth-gold fill-current"></i>
+            <span class="text-xl font-serif font-bold tracking-wide">TOWAF</span>
+          </div>
+          <p class="text-sage-700 dark:text-sage-400 text-sm leading-relaxed mb-6">
+            Restoring hope and rebuilding lives in post-war and crisis-affected communities.
+          </p>
+          <div
+            class="inline-block border border-sage-300 dark:border-sage-600 rounded px-3 py-1 text-xs text-sage-600 dark:text-sage-500">
+            501(c)(3) Non-Profit
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sage-700 dark:text-sage-300 font-bold mb-6">Quick Links</h4>
+          <ul class="space-y-4">
+            <li><a href="#home"
+                class="text-sage-700 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Home</a></li>
+            <li><a href="#mission"
+                class="text-sage-700 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Mission</a>
+            </li>
+            <li><a href="#founder"
+                class="text-sage-700 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Founder</a>
+            </li>
+            <li><a href="#programs"
+                class="text-sage-700 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Programs</a>
+            </li>
+            <li><a href="#impact"
+                class="text-sage-700 dark:text-sage-400 hover:text-earth-gold transition-colors text-sm">Impact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-sage-700 dark:text-sage-300 font-bold mb-6">Contact Us</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-sage-700 dark:text-sage-400 text-sm">
+              <i data-lucide="map-pin" class="w-4 h-4 text-earth-gold mt-1"></i>
+              <span>3136 Big Bear Dr.<br />Roseville, CA 95747, USA</span>
+            </li>
+            <li class="flex items-center gap-3 text-sage-700 dark:text-sage-400 text-sm">
+              <i data-lucide="mail" class="w-4 h-4 text-earth-gold"></i>
+              <a href="mailto:info@towaf.org"
+                class="hover:text-sage-800 dark:hover:text-sage-300 transition-colors">info@towaf.org</a>
+            </li>
+            <li class="flex items-center gap-3 text-sage-700 dark:text-sage-400 text-sm">
+              <i data-lucide="globe" class="w-4 h-4 text-earth-gold"></i>
+              <a href="#" class="hover:text-sage-800 dark:hover:text-sage-300 transition-colors">www.towaf.org</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="text-sage-700 dark:text-sage-300 font-bold mb-6">Stay Connected</h4>
+          <p class="text-sage-700 dark:text-sage-400 text-sm mb-4">Join our community and help us rebuild lives.</p>
+          <form class="flex gap-2">
+            <input type="email" placeholder="Your email"
+              class="bg-white dark:bg-slate-700 border border-sage-300 dark:border-slate-600 rounded px-4 py-2 text-sm text-sage-700 dark:text-sage-300 w-full focus:outline-none focus:border-earth-gold transition-colors"
+              aria-label="Your email address" />
+            <button
+              class="bg-earth-gold text-white px-4 py-2 rounded text-sm font-bold hover:bg-yellow-600 transition-colors"
+              aria-label="Subscribe to newsletter">
+              Join
+            </button>
+          </form>
+          <div class="flex gap-4 mt-6">
+            <a href="#" class="text-sage-700 dark:text-sage-400 hover:text-earth-gold transition-colors"
+              aria-label="Facebook">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="text-sage-700 dark:text-sage-400 hover:text-earth-gold transition-colors"
+              aria-label="Twitter">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="text-sage-700 dark:text-sage-400 hover:text-earth-gold transition-colors"
+              aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="text-sage-700 dark:text-sage-400 hover:text-earth-gold transition-colors"
+              aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-sage-300 dark:border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sage-600 dark:text-sage-500 text-xs">
+          &copy; 2025 Together With Africa. All rights reserved.
+        </p>
+        <div class="flex gap-6 text-xs text-sage-600 dark:text-sage-500">
+          <a href="#" class="hover:text-sage-800 dark:hover:text-sage-400">Privacy Policy</a>
+          <a href="#" class="hover:text-sage-800 dark:hover:text-sage-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    const progressBar = document.getElementById('progress-bar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('glass', 'shadow-sm', 'py-4');
+        navbar.classList.remove('py-6');
+      } else {
+        navbar.classList.remove('glass', 'shadow-sm', 'py-4');
+        navbar.classList.add('py-6');
+      }
+
+      // Update progress bar
+      const winHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset;
+      const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+      progressBar.style.width = scrollPercent + '%';
+    });
+
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-link');
+
+    let isMenuOpen = false;
+
+    btn.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        menu.classList.remove('translate-x-full');
+        menu.classList.add('translate-x-0');
+        // Update icon to X
+        btn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+      } else {
+        menu.classList.add('translate-x-full');
+        menu.classList.remove('translate-x-0');
+        // Update icon to Menu
+        btn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+      }
       lucide.createIcons();
+    });
 
-      // Navbar Scroll Effect
-      const navbar = document.getElementById('navbar');
-      const progressBar = document.getElementById('progress-bar');
-      
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-          navbar.classList.add('glass', 'shadow-sm', 'py-4');
-          navbar.classList.remove('py-6');
-        } else {
-          navbar.classList.remove('glass', 'shadow-sm', 'py-4');
-          navbar.classList.add('py-6');
-        }
-        
-        // Update progress bar
-        const winHeight = window.innerHeight;
-        const docHeight = document.documentElement.scrollHeight;
-        const scrollTop = window.pageYOffset;
-        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
-        progressBar.style.width = scrollPercent + '%';
-      });
-
-      // Mobile Menu Toggle
-      const btn = document.getElementById('mobile-menu-btn');
-      const menu = document.getElementById('mobile-menu');
-      const links = document.querySelectorAll('.mobile-link');
-      
-      let isMenuOpen = false;
-
-      btn.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
-        if (isMenuOpen) {
-          menu.classList.remove('translate-x-full');
-          menu.classList.add('translate-x-0');
-          // Update icon to X
-          btn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
-        } else {
-          menu.classList.add('translate-x-full');
-          menu.classList.remove('translate-x-0');
-          // Update icon to Menu
-          btn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-        }
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        isMenuOpen = false;
+        menu.classList.add('translate-x-full');
+        menu.classList.remove('translate-x-0');
+        btn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
         lucide.createIcons();
       });
+    });
 
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          isMenuOpen = false;
-          menu.classList.add('translate-x-full');
-          menu.classList.remove('translate-x-0');
-          btn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-          lucide.createIcons();
-        });
-      });
-
-      // Scroll Animation Observer
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Only animate once
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      document.querySelectorAll('.reveal').forEach((el) => {
-        observer.observe(el);
-      });
-
-      // Dark Mode Toggle
-      const darkModeToggle = document.getElementById('dark-mode-toggle');
-      const mobileDarkModeToggle = document.getElementById('mobile-dark-mode-toggle');
-      
-      function toggleDarkMode() {
-        document.documentElement.classList.toggle('dark');
-        // Save preference to localStorage
-        if (document.documentElement.classList.contains('dark')) {
-          localStorage.setItem('darkMode', 'enabled');
-        } else {
-          localStorage.setItem('darkMode', 'disabled');
+    // Scroll Animation Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // Only animate once
         }
-        // Update icons
-        lucide.createIcons();
-      }
-      
-      darkModeToggle.addEventListener('click', toggleDarkMode);
-      mobileDarkModeToggle.addEventListener('click', toggleDarkMode);
-      
-      // Check for saved dark mode preference
-      if (localStorage.getItem('darkMode') === 'enabled') {
-        document.documentElement.classList.add('dark');
-      }
-
-      // Counter Animation for Impact Numbers
-      function animateCounter(element, finalValue, duration = 2000) {
-        let start = 0;
-        const increment = finalValue / (duration / 16); // 60fps
-        const timer = setInterval(() => {
-          start += increment;
-          if (start >= finalValue) {
-            element.textContent = finalValue.toLocaleString() + (element.textContent.includes('+') ? '+' : '');
-            clearInterval(timer);
-          } else {
-            element.textContent = Math.floor(start).toLocaleString() + (element.textContent.includes('+') ? '+' : '');
-          }
-        }, 16);
-      }
-
-      // Observe impact section for counter animation
-      const impactObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Animate counters
-            animateCounter(document.getElementById('count-1'), 1600);
-            animateCounter(document.getElementById('count-2'), 400);
-            animateCounter(document.getElementById('count-3'), 155);
-            animateCounter(document.getElementById('count-4'), 12);
-            impactObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-
-      const impactSection = document.getElementById('impact');
-      if (impactSection) {
-        impactObserver.observe(impactSection);
-      }
-
-      // Testimonial Carousel
-      let currentSlide = 0;
-      const slides = document.querySelectorAll('.testimonial-slide');
-      const indicators = document.querySelectorAll('.testimonial-indicator');
-      const totalSlides = slides.length;
-
-      function showSlide(index) {
-        // Ensure index is within bounds
-        if (index < 0) index = totalSlides - 1;
-        if (index >= totalSlides) index = 0;
-        
-        // Update current slide
-        currentSlide = index;
-        
-        // Move slides
-        document.querySelector('.testimonial-slides').style.transform = `translateX(-${currentSlide * 100}%)`;
-        
-        // Update indicators
-        indicators.forEach((indicator, i) => {
-          if (i === currentSlide) {
-            indicator.classList.add('indicator-active');
-            indicator.classList.remove('bg-sage-300', 'dark:bg-sage-600');
-            indicator.classList.add('bg-earth-gold', 'w-8');
-          } else {
-            indicator.classList.remove('indicator-active', 'bg-earth-gold', 'w-8');
-            indicator.classList.add('bg-sage-300', 'dark:bg-sage-600', 'w-3');
-          }
-        });
-      }
-
-      // Add event listeners for carousel controls
-      document.querySelector('.testimonial-prev').addEventListener('click', () => {
-        showSlide(currentSlide - 1);
       });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
 
-      document.querySelector('.testimonial-next').addEventListener('click', () => {
-        showSlide(currentSlide + 1);
+    document.querySelectorAll('.reveal').forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const mobileDarkModeToggle = document.getElementById('mobile-dark-mode-toggle');
+
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      // Save preference to localStorage
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+      }
+      // Update icons
+      lucide.createIcons();
+    }
+
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+    mobileDarkModeToggle.addEventListener('click', toggleDarkMode);
+
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.documentElement.classList.add('dark');
+    }
+
+    // Counter Animation for Impact Numbers
+    function animateCounter(element, finalValue, duration = 2000) {
+      let start = 0;
+      const increment = finalValue / (duration / 16); // 60fps
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= finalValue) {
+          element.textContent = finalValue + (element.textContent.includes('+') ? '+' : '');
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(start) + (element.textContent.includes('+') ? '+' : '');
+        }
+      }, 16);
+    }
+
+    // Observe impact section for counter animation
+    const impactObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate counters
+          animateCounter(document.getElementById('count-1'), 1600);
+          animateCounter(document.getElementById('count-2'), 400);
+          animateCounter(document.getElementById('count-3'), 155);
+          animateCounter(document.getElementById('count-4'), 12);
+          impactObserver.unobserve(entry.target);
+        }
       });
+    }, { threshold: 0.5 });
 
-      // Add event listeners for indicators
+    const impactSection = document.getElementById('impact');
+    if (impactSection) {
+      impactObserver.observe(impactSection);
+    }
+
+    // Testimonial Carousel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const indicators = document.querySelectorAll('.testimonial-indicator');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      // Ensure index is within bounds
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+
+      // Update current slide
+      currentSlide = index;
+
+      // Move slides
+      document.querySelector('.testimonial-slides').style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      // Update indicators
       indicators.forEach((indicator, i) => {
-        indicator.addEventListener('click', () => {
-          showSlide(i);
+        if (i === currentSlide) {
+          indicator.classList.add('indicator-active');
+          indicator.classList.remove('bg-sage-300', 'dark:bg-sage-600');
+          indicator.classList.add('bg-earth-gold', 'w-8');
+        } else {
+          indicator.classList.remove('indicator-active', 'bg-earth-gold', 'w-8');
+          indicator.classList.add('bg-sage-300', 'dark:bg-sage-600', 'w-3');
+        }
+      });
+    }
+
+    // Add event listeners for carousel controls
+    document.querySelector('.testimonial-prev').addEventListener('click', () => {
+      showSlide(currentSlide - 1);
+    });
+
+    document.querySelector('.testimonial-next').addEventListener('click', () => {
+      showSlide(currentSlide + 1);
+    });
+
+    // Add event listeners for indicators
+    indicators.forEach((indicator, i) => {
+      indicator.addEventListener('click', () => {
+        showSlide(i);
+      });
+    });
+
+    // Auto-advance carousel
+    setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 5000);
+
+    // Lazy loading for images
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
         });
       });
 
-      // Auto-advance carousel
-      setInterval(() => {
-        showSlide(currentSlide + 1);
-      }, 5000);
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
 
-      // Lazy loading for images
-      if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              img.src = img.dataset.src;
-              img.classList.remove('lazy');
-              imageObserver.unobserve(img);
-            }
-          });
-        });
+    // Add loading state for buttons
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', function (e) {
+        if (this.classList.contains('has-loading')) return;
 
-        document.querySelectorAll('img[data-src]').forEach(img => {
-          imageObserver.observe(img);
-        });
+        const originalText = this.innerHTML;
+        this.innerHTML = '<div class="loading-dots"><div></div><div></div><div></div><div></div></div>';
+        this.classList.add('has-loading');
+
+        setTimeout(() => {
+          this.innerHTML = originalText;
+          this.classList.remove('has-loading');
+        }, 1500);
+      });
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      // Tab key for accessibility
+      if (e.key === 'Tab') {
+        document.body.classList.add('user-tabbing');
       }
 
-      // Add loading state for buttons
-      document.querySelectorAll('button').forEach(button => {
-        button.addEventListener('click', function(e) {
-          if (this.classList.contains('has-loading')) return;
-          
-          const originalText = this.innerHTML;
-          this.innerHTML = '<div class="loading-dots"><div></div><div></div><div></div><div></div></div>';
-          this.classList.add('has-loading');
-          
-          setTimeout(() => {
-            this.innerHTML = originalText;
-            this.classList.remove('has-loading');
-          }, 1500);
-        });
-      });
+      // Carousel navigation with arrow keys
+      if (e.key === 'ArrowLeft') {
+        showSlide(currentSlide - 1);
+      } else if (e.key === 'ArrowRight') {
+        showSlide(currentSlide + 1);
+      }
+    });
 
-      // Keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        // Tab key for accessibility
-        if (e.key === 'Tab') {
-          document.body.classList.add('user-tabbing');
-        }
-        
-        // Carousel navigation with arrow keys
-        if (e.key === 'ArrowLeft') {
-          showSlide(currentSlide - 1);
-        } else if (e.key === 'ArrowRight') {
-          showSlide(currentSlide + 1);
-        }
-      });
+    // Remove tabbing class on mouse click
+    document.addEventListener('mousedown', () => {
+      document.body.classList.remove('user-tabbing');
+    });
+  </script>
 
-      // Remove tabbing class on mouse click
-      document.addEventListener('mousedown', () => {
-        document.body.classList.remove('user-tabbing');
-      });
-    </script>
-  </body>
+  <a href="take3.html">Go to the next page</a>
+
+
+</body>
+
 </html>
