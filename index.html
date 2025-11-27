@@ -319,14 +319,17 @@
           class="text-sm font-medium text-earth-gold-light hover:text-white transition-colors tracking-wide">Programs</a>
       </div>
 
-      <!-- Center Logo -->
-      <div class="flex items-center gap-2 z-50 absolute left-1/2 transform -translate-x-1/2">
-        <div class="bg-earth-gold text-white p-2 rounded-full shadow-lg transition-colors duration-300">
-          <i data-lucide="heart" class="w-5 h-5 text-white fill-current"></i>
+      <!-- Center Logo - Enhanced -->
+      <div class="flex items-center justify-center z-50">
+        <div class="bg-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group">
+          <img src="logo.png" alt="Organization Logo"
+            class="w-20 h-20 object-contain group-hover:scale-105 transition-transform duration-300"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <!-- Fallback in case logo doesn't load -->
+          <div class="w-20 h-20 bg-earth-gold rounded-full flex items-center justify-center hidden">
+            <i data-lucide="heart" class="w-10 h-10 text-white fill-current"></i>
+          </div>
         </div>
-        <span class="text-xl font-serif font-bold tracking-wide text-earth-gold-light">
-          TOWAF
-        </span>
       </div>
 
       <!-- Right Navigation Links -->
